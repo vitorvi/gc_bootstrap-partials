@@ -1,0 +1,314 @@
+//should renane it (maybe to 'custom-bootstrap'?) or distribute the selectors through other files, maybe create custom GC components?
+
+@import "functions";
+@import "variables";
+@import "mixins";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 150%;
+}
+
+body {
+    font-family: ocre-sans;
+    font-weight: 200;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: ocre-poster-sans-swashes;
+}
+
+h1 {
+    line-height: 3rem;
+}
+
+.negativo {
+    background-color: $azul;
+    * {
+        color: $rosa;
+    }
+}
+
+header {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+    background-color: $branco;
+    width: 100%;
+    top: 0;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    z-index: 1;
+    .logo {
+        svg {
+            display: block;
+            height: 1.5rem;
+        }
+    }
+    .menu {
+        margin-bottom: 0;
+        li {
+            margin-left: 1rem;
+            display: inline-block;
+             a {
+                color: $azul;
+                font-variant: small-caps;
+                text-transform: lowercase;
+                font-weight: 100;
+                font-size: .6666666666rem;//16px
+                &.current-page {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+    .navbar-brand {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+main {
+    margin-top: 2.5rem;
+    min-height: 100vh;
+    min-height: calc(100vh - 2.5rem);
+}
+
+.sutia {
+    border-bottom: 1px solid $cinza;
+    .container {
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+        font-family: ocre-poster-sans-swashes;
+        color: $rosa;
+        text-align: center;
+        font-size: 1.3333333333rem;//32px
+        line-height: 2rem;
+    }
+}
+
+.filtros {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    ul {
+        margin-bottom: 0;
+        li {
+            margin-left: 1rem;
+            display: inline-block;
+            &:first-child {
+                margin-left: 0;
+            }
+             a {
+                color: $cinza-escuro;
+                text-transform: lowercase;
+                font-weight: 100;
+                font-size: .6666666666rem;
+                line-height: 1rem;
+            }
+        }
+    }
+}
+
+.galeria {
+    margin-bottom: 2.5rem;
+    .descricao {
+        font-style: italic;
+        font-weight: 100;
+        line-height: 1.5rem;
+        font-size: 1rem;
+        color: $azul;
+        p {
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 1px solid $rosa;
+        }
+    }
+    .thumb-projeto {
+        position: relative;
+        article {
+            padding-bottom: 100%;
+            background-color: $azul;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+            margin-bottom: .5rem;
+            .conteudo {
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                height: calc(100% - #{$grid-gutter-width});
+                display: flex;
+                flex-wrap: wrap;
+                flex-flow: column wrap;
+                align-items: center;
+                justify-content: center;
+                h1, p {
+                    color: $branco;
+                }
+                .destaque {
+                    font-style: italic;
+                    font-weight: 100;
+                    font-size: 1rem;
+                    line-height: 1rem;
+                    margin-bottom: 1.5rem;
+                }
+                h1 {
+                    font-size: 1.5rem;
+                    line-height: 2rem;
+                    margin-bottom: 1rem;
+                }
+                .categorias {
+                    border: 1px solid $branco;
+                    border-radius: 2px;
+                    display: inline-flex;
+                    font-size: .6666666666rem;
+                    font-variant: small-caps;
+                    font-weight: 100;
+                    letter-spacing: .5px;
+                    line-height: 1.5rem;
+                    padding-left: .5rem;
+                    padding-right: .5rem;
+                    text-transform: lowercase;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &:hover {
+            article {
+                cursor: pointer;
+            }
+            .conteudo {
+                opacity: 1;
+            }
+        }
+        &.destaque {
+            article {
+                @include media-breakpoint-up(sm) {
+                  padding-bottom: 100%;
+                }
+                @include media-breakpoint-up(md) {
+                  padding-bottom: calc(50% - #{$grid-gutter-width/2});
+                }
+                @include media-breakpoint-up(lg) {
+                  padding-bottom: calc(33.333% - #{$grid-gutter-width*2/3});
+                }
+            }
+        }
+    }
+}
+
+.mais-projetos {
+    margin-bottom: 5rem;
+}
+
+.clientes {
+    h2 {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    background-color: $cinza-claro;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    .cliente {
+        margin-bottom: 3rem;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+footer {
+    background-color: $azul;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    #formulario-contato {
+        border-bottom: 1px solid $cinza;
+        h2 {
+            color: $branco;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        button {
+            margin-bottom: 3rem;
+        }
+        form {
+            margin-bottom: 2rem;
+        }
+    }
+    #contatos {
+        padding-top: 2rem;
+        ul {
+            list-style-type: none;
+            li {
+                margin-top: .5rem;
+                font-size: .6666666666rem;
+                line-height: 1rem;
+                color: $branco;
+                &:first-child {
+                    margin-top: 0;
+                }
+                a {
+                    font-style: italic;
+                    color: $branco;
+                    font-weight: 100;
+                }
+            }
+        }
+        address {
+            ul {
+                border-left: 1px solid $cinza;
+                padding-left: 1rem;
+            }
+        }
+        .midias {
+            ul {
+                text-align: right;
+                li {
+                    display: inline-flex;
+                    margin-left: .5rem;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    img {
+                        height: 1rem;
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.btn-group-lg > .btn, .btn-lg {
+    padding: .75rem 2rem;
+    font-size: .83333333333rem;//20px
+    line-height: 1.5rem;
+    border-radius: 2px;
+}
+
+.btn-primary {
+    color: $branco;
+    background-color: $rosa;
+    border-color: transparent;
+}
+
+.btn {
+    font-weight: 100;
+    border: 1px solid transparent;
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out, transform .15s ease-in-out;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.btn-primary:hover, .btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    background-color: $rosa-claro;
+    border-color: transparent;
+    box-shadow: 0px .3333333333rem .5rem rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
