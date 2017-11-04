@@ -50,3 +50,31 @@ $custom_font-weight-bold:            400;
 //
 $custom_input-color:                           $branco;
 $custom_input-focus-border-color:              $rosa;
+
+
+//Custom GC font maps
+
+$suhmo: (
+    suhmo: (
+        normal: ( normal, bold ),
+        italic: ( normal, bold )
+    ),
+    suhmo-sc: (
+        normal: ( normal, bold ),
+        italic: ( normal, bold )
+    )
+);
+
+$ocre: (
+    ocre-sans: (
+        normal: ( 100, 200, 300, 400 ),
+        italic: ( 100, 200, 300, 400 )
+    ),
+    ocre-poster-sans: ( 
+        normal,
+        italic 
+    ),
+    ocre-poster-sans-swashes: ( 
+        null 
+    )
+);
