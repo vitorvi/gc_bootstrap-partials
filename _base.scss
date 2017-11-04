@@ -1,5 +1,6 @@
 //should renane it (maybe to 'custom-bootstrap'?) or distribute the selectors through other files, maybe create custom GC components?
 
+@import "custom_functions";
 @import "functions";
 @import "variables";
 @import "mixins";

@@ -542,8 +542,12 @@ $nav-pills-link-active-bg:          $component-active-bg !default;
 
 // Navbar
 
+//Custom local variables
+$custom_navbar-padding-y:           0;
+$custom_navbar-padding-x:           ($grid-gutter-width / 2);
+
 $navbar-padding-y:                  $custom_navbar-padding-y !default;
-$navbar-padding-x:                  $custom_navbar-padding-x: !default;
+$navbar-padding-x:                  $custom_navbar-padding-x !default;
 
 $navbar-brand-font-size:            $font-size-lg !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
