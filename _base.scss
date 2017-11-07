@@ -99,15 +99,17 @@ main {
         li {
             margin-left: 1rem;
             display: inline-block;
+            color: $cinza-escuro;
+            text-transform: lowercase;
+            font-weight: 100;
+            font-size: .6666666666rem;
+            line-height: 1rem;
+            cursor: pointer;
             &:first-child {
                 margin-left: 0;
             }
-             a {
-                color: $cinza-escuro;
-                text-transform: lowercase;
-                font-weight: 100;
-                font-size: .6666666666rem;
-                line-height: 1rem;
+            &.is-checked {
+                font-weight: 400;
             }
         }
     }
