@@ -80,6 +80,7 @@ main {
     margin-top: 2.5rem;
     min-height: 100vh;
     min-height: calc(100vh - 2.5rem);
+    height: 100%;
 }
 
 .sutia {
@@ -331,54 +332,92 @@ footer {
     margin-top: 0;
     padding-top: 2.5rem;
     position: relative;
-    .intro-projeto {
-        text-align: center;
-    }  
-}
 
-.img-sangrada, .img-grande, .img-media {
-    img {
-        width: 100%;
-        height: 100%;
+    h1, h2, h3, h4, h5, h6, p {
+        margin-bottom: 0;
     }
-}
 
-section {
-  .img-sangrada {
-
-    }  
-}
-
-.img-sangrada {
-
-}
-
-.mosaico-2, .mosaico-3 {
-    img {
-        height: 100%;
-    }
-}
-
-.owl-stage-outer {
-    overflow: visible !important;
-    overflow-y: hidden;
-    .owl-stage {
-        overflow: visible !important;
-        overflow-y: hidden;
-        .owl-item:not(.active) {
+    p {
+        @include media-breakpoint-up(lg) {
+            font-size: .91666666666666rem;
+            line-height: 1.5rem;
+            font-weight: 100;
         }
     }
-}
 
-.comentario {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    blockquote {
-        color: $branco;
-        font-weight: 100;
-        font-style: italic;
-        font-size: 1.5rem;
-        line-height: 2rem;
+    > .p, > .h1, >.h2 {
+        margin-bottom: 4rem;
+    }
+
+    > .h1 + .p, > .h2 + .p {
+        margin-top: -3rem;
+    }
+    
+    .intro-projeto {
         text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .img-sangrada, .img-grande, .img-media {
+        margin-bottom: 4rem;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        figcaption {
+            margin-top: 1rem;
+            text-align: center;
+            font-style: italic;
+            font-weight: 100;
+        }
+    }
+
+    .mosaico-2, .mosaico-3 {
+        margin-bottom: 4rem;
+        img {
+            height: 100%;
+            margin-bottom: .5rem;
+            @include media-breakpoint-up(sm) {
+              margin-bottom: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .carrossel {
+        margin-bottom: 4rem;
+        &:hover {
+            cursor: -webkit-grab;
+            cursor: grab;
+        }
+        .owl-stage-outer {
+            overflow: visible !important;
+            overflow-y: hidden;
+            &:active {
+                cursor: -webkit-grabbing;
+                cursor: grabbing;
+            }
+            .owl-stage {
+                overflow: visible !important;
+                overflow-y: hidden;
+                .owl-item:not(.active) {
+                }
+            }
+        }
+    }
+
+    .comentario {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        margin-bottom: 4rem;
+        blockquote {
+            color: $branco;
+            font-weight: 100;
+            font-style: italic;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            text-align: center;
+        }
     }
 }

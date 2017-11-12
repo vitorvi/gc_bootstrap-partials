@@ -98,7 +98,8 @@ hr {
 // stylelint-disable selector-list-comma-newline-after
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: $headings-margin-bottom;
+  //margin-bottom: $headings-margin-bottom;
+  margin-bottom: 0; //gc-custom
 }
 // stylelint-enable selector-list-comma-newline-after
 
@@ -108,7 +109,8 @@ h1, h2, h3, h4, h5, h6 {
 // bottom margin to use `rem` units instead of `em`.
 p {
   margin-top: 0;
-  margin-bottom: $paragraph-margin-bottom;
+  //margin-bottom: $paragraph-margin-bottom;
+  margin-bottom: 0; //gc-custom
 }
 
 // Abbreviations
@@ -127,7 +129,8 @@ abbr[data-original-title] { // 4
 }
 
 address {
-  margin-bottom: 1rem;
+  //margin-bottom: 1rem;
+  margin-bottom: 0; //gc-custom
   font-style: normal;
   line-height: inherit;
 }
@@ -136,7 +139,8 @@ ol,
 ul,
 dl {
   margin-top: 0;
-  margin-bottom: 1rem;
+  //margin-bottom: 1rem;
+  margin-bottom: 0; //gc-custom
 }
 
 ol ol,
@@ -151,12 +155,14 @@ dt {
 }
 
 dd {
-  margin-bottom: .5rem;
+  //margin-bottom: .5rem;
+  margin-bottom: 0; //gc-custom
   margin-left: 0; // Undo browser default
 }
 
 blockquote {
-  margin: 0 0 1rem;
+  //margin: 0 0 1rem;
+  margin: 0; //gc-custom
 }
 
 dfn {
@@ -246,7 +252,8 @@ pre {
   // Remove browser default top margin
   margin-top: 0;
   // Reset browser default of `1em` to use `rem`s
-  margin-bottom: 1rem;
+  //margin-bottom: 1rem;
+  margin-bottom: 0; //gc-custom
   // Don't allow content to break outside
   overflow: auto;
   // We have @viewport set which causes scrollbars to overlap content in IE11 and Edge, so
@@ -261,7 +268,8 @@ pre {
 
 figure {
   // Apply a consistent margin strategy (matches our type styles).
-  margin: 0 0 1rem;
+  //margin: 0 0 1rem;
+  margin: 0; //gc-custom
 }
 
 
@@ -332,7 +340,8 @@ th {
 label {
   // Allow labels to use `margin` for spacing.
   display: inline-block;
-  margin-bottom: .5rem;
+  //margin-bottom: .5rem;
+  margin-bottom: 0; //gc-custom
 }
 
 // Remove the default `border-radius` that macOS Chrome adds.
@@ -436,7 +445,8 @@ legend {
   width: 100%;
   max-width: 100%; // 1
   padding: 0;
-  margin-bottom: .5rem;
+  //margin-bottom: .5rem;
+  margin-bottom: 0; //gc-custom
   font-size: 1.5rem;
   line-height: inherit;
   color: inherit; // 2
