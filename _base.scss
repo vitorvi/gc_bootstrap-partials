@@ -103,6 +103,9 @@ main {
         margin-bottom: 0;
         li {
             margin-left: 1rem;
+        }
+        li, a {
+            text-decoration: none;
             display: inline-block;
             color: $cinza-escuro;
             text-transform: lowercase;
@@ -136,7 +139,8 @@ main {
     }
     .thumb-projeto {
         position: relative;
-        article {
+        a {
+            display: block;
             padding-bottom: 100%;
             background-color: $azul;
             border-radius: 2px;
@@ -187,7 +191,7 @@ main {
             }
         }
         &:hover {
-            article {
+            a {
                 cursor: pointer;
             }
             .conteudo {
@@ -195,7 +199,7 @@ main {
             }
         }
         &.destaque {
-            article {
+            a {
                 @include media-breakpoint-up(sm) {
                   padding-bottom: 100%;
                 }
