@@ -358,7 +358,7 @@ footer {
         margin-bottom: 4rem;
     }
 
-    .img-sangrada, .img-grande, .img-media {
+    .img-sangrada, .img-grande, .img-media, .img-h2-p {
         margin-bottom: 4rem;
         img {
             width: 100%;
@@ -418,6 +418,13 @@ footer {
             font-size: 1.5rem;
             line-height: 2rem;
             text-align: center;
+        }
+    }
+
+    .img-h2-p {
+        margin-bottom: 4rem;
+        h2 {
+            margin-bottom: 1rem;
         }
     }
 }
