@@ -396,6 +396,25 @@ footer {
             }
         }
     }
+
+    .mosaico-2-full, .mosaico-3-full {
+        figure {
+            padding-bottom: 60%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &.no-gutter {
+            .img {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            &.no-margin-bottom {
+                margin-bottom: 0;
+            }
+        }
+    }
+
     .carrossel {
         margin-bottom: 4rem;
         &:hover {
@@ -437,6 +456,10 @@ footer {
         h2 {
             margin-bottom: 1rem;
         }
+    }
+
+    .no-margin-bottom {
+        margin-bottom: .5rem;
     }
 }
 
