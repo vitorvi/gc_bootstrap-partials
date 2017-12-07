@@ -380,6 +380,8 @@ footer {
         .img {
             height: 50vh;
             width: 100vw;
+            background-position: center;
+            background-size: cover;
         }
     }
 
@@ -397,7 +399,7 @@ footer {
         }
     }
 
-    .mosaico-2-full, .mosaico-3-full {
+    .mosaico-2, .mosaico-3, .mosaico-2-full, .mosaico-3-full {
         figure {
             padding-bottom: 60%;
             background-size: cover;
