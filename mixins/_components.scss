@@ -1,0 +1,6 @@
+@mixin component-margin-bottom {
+	margin-bottom: $component-mobile-margin-bottom;
+	@include media-breakpoint-up(lg) {
+		margin-bottom: $component-desktop-margin-bottom;
+	}
+}

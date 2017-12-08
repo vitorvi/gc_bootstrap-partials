@@ -357,22 +357,24 @@ footer {
     }
 
     > .p, > .h1, >.h2 {
-        margin-bottom: 4rem;
+        @include component-margin-bottom;
     }
 
     > .h1 + .p, > .h2 + .p {
-        margin-top: -3rem;
+        margin-top: #{ 1rem - $component-mobile-margin-bottom };
+        @include media-breakpoint-up(lg) {
+            margin-top: #{ 1rem - $component-desktop-margin-bottom };
+        }
     }
     
     .intro-projeto {
         text-align: center;
-        margin-bottom: 4rem;
+        @include component-margin-bottom;
     }
 
     .img-sangrada, .img-grande, .img-media, .img-pequena, .img-h2-p, .faixa {
-        margin-bottom: 4rem;
+        @include component-margin-bottom;
         img {
-            width: 100%;
             height: 100%;
         }
         figcaption {
@@ -385,20 +387,24 @@ footer {
 
     .faixa {
         .img {
-            height: 50vh;
-            width: 100vw;
             background-position: center;
             background-size: cover;
+            height: 100vw;
+            width: 100vw;
+            @include media-breakpoint-up(lg) {
+                height: 50vh;
+                width: 100vw;
+            }
         }
     }
 
     .mosaico-2, .mosaico-3, .mosaico-2-full, .mosaico-3-full {
-        margin-bottom: 4rem;
-        img {
+        @include component-margin-bottom;
+        .img {
             height: 100%;
             margin-bottom: .5rem;
-            @include media-breakpoint-up(sm) {
-              margin-bottom: 0;
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 0;
             }
             &:last-child {
                 margin-bottom: 0;
@@ -419,6 +425,7 @@ footer {
             .img {
                 padding-left: 0;
                 padding-right: 0;
+                margin-bottom: 0;
             }
             &.no-margin-bottom {
                 margin-bottom: 0;
@@ -427,7 +434,7 @@ footer {
     }
 
     .carrossel {
-        margin-bottom: 4rem;
+        @include component-margin-bottom;
         &:hover {
             cursor: -webkit-grab;
             cursor: grab;
@@ -449,9 +456,13 @@ footer {
     }
 
     .comentario {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
-        margin-bottom: 4rem;
+        padding-top: $component-mobile-margin-bottom;
+        padding-bottom: $component-mobile-margin-bottom;
+        @include media-breakpoint-up(lg) {
+            padding-top: $component-desktop-margin-bottom;
+            padding-bottom: $component-desktop-margin-bottom;
+        }
+        @include component-margin-bottom;
         blockquote {
             color: $branco;
             font-weight: 100;
@@ -463,7 +474,13 @@ footer {
     }
 
     .img-h2-p {
-        margin-bottom: 4rem;
+        @include component-margin-bottom;
+        img {
+            margin-bottom: $component-mobile-margin-bottom;
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 0;
+            }
+        }
         h2 {
             margin-bottom: 1rem;
         }
@@ -554,7 +571,7 @@ footer {
         }
     }
     .membro {
-        margin-bottom: 4rem;
+        @include component-margin-bottom;
         @include media-breakpoint-up(lg) {
           margin-right: 1px;
         }
