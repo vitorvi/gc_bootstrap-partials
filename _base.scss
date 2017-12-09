@@ -333,8 +333,12 @@ footer {
 }
 
 .capa-projeto {
-    img {
-        width: 100%;
+    width: 100vw;
+    height: 100vw;
+    background-position: center;
+    background-size: cover;
+    @include media-breakpoint-up(lg) {
+        height: calc(100vh - 2.5rem);
     }
 }
 
