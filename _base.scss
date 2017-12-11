@@ -569,8 +569,8 @@ footer {
     padding-top: 3rem;
     background-color: #fafafa;
     .titulo {
-        margin-bottom: 3.5rem;
-        h1 {
+        @include component-margin-bottom;
+        h2 {
             text-align: center;
         }
     }
@@ -608,5 +608,56 @@ footer {
             margin-right: 1px;
         }
         height: 1px;
+    }
+    #membros-mobile {
+        padding-left: .75rem;
+        padding-right: .75rem;
+        .owl-stage-outer {
+            overflow: visible !important;
+            overflow-y: hidden;
+            z-index: 1;
+            &:active {
+                cursor: -webkit-grabbing;
+                cursor: grabbing;
+            }
+            .owl-stage {
+                overflow: visible !important;
+                overflow-y: hidden;
+                .owl-item:not(.active) {
+                }
+            }
+            .owl-item {
+                a, p {
+                    opacity: 1;
+                    transition: opacity .3s linear;
+                }
+                &:not(.active) {
+                    a, p {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+        .owl-nav {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            width: calc(100% - 1.5rem);
+            top: 0;
+            padding-top: calc(100% - 2rem);
+            .owl-prev, .owl-next {
+                margin-left: -1rem;
+                margin-right: -1rem;
+                background: transparent;
+                color: $rosa;
+                font-size: 1.5rem;
+                line-height: 1rem;
+                padding: 0;
+                border-radius: 0;
+                font-weight: 400;
+                z-index: 2;
+            }
+        }
     }
 }
