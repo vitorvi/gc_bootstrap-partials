@@ -37,6 +37,9 @@ $custom_border-radius:               .083333333333rem;
 $custom_border-radius-lg:            .083333333333rem;
 $custom_border-radius-sm:            .083333333333rem;
 
+// original value: height .35s ease !default;
+$custom_transition-collapse: height .35s ease-in-out !default;
+
 // Fonts
 //
 // Font, line-height, and color for body text, headings, and more.

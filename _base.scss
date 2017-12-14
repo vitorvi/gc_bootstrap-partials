@@ -53,11 +53,26 @@ header {
             height: 1.5rem;
         }
     }
+    #menu-button {
+        padding: 0;
+        border: 0;
+        &.collapsed {
+            svg {
+                
+            }
+        }
+        svg {
+            height: 1.25rem;
+            width: 1.25rem;
+            display: block;
+        }
+    }
     .menu {
         margin-bottom: 0;
         li {
             margin-left: 1rem;
             display: inline-block;
+            text-transform: uppercase;
              a {
                 color: $azul;
                 font-variant: small-caps;
@@ -73,6 +88,40 @@ header {
     .navbar-brand {
         padding-top: 0;
         padding-bottom: 0;
+    }
+}
+
+#menu-mobile {
+    width: 100%;
+    background-color: $branco;
+    &.show {
+        ul {
+            opacity: 1;
+            transition: opacity .25s linear;
+            li {
+                line-height: 2rem;
+                transition: line-height .25s ease;
+            }
+        }
+    }
+    ul {
+        opacity: 0;
+        text-align: center;
+        height: calc(100vh - 2.5rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column wrap;
+        transition: opacity .1s linear;
+        li {
+            transition: line-height 0s ease .25s;
+            list-style-type: none;
+            line-height: 2.2rem;
+            font-size: 1rem;
+            font-weight: 100;
+            font-variant: all-small-caps;
+            letter-spacing: 1px;
+        }
     }
 }
 
