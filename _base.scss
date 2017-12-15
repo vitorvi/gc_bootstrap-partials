@@ -25,7 +25,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: ocre-poster-sans-swashes;
+    font-family: ocre-poster-sans;
 }
 
 h1 {
@@ -152,7 +152,7 @@ main {
     .gc-container {
         padding-top: 3rem;
         padding-bottom: 2rem;
-        font-family: ocre-poster-sans-swashes;
+        font-family: ocre-poster-sans;
         color: $rosa;
         text-align: center;
         font-size: 1.3333333333rem;//32px
@@ -229,8 +229,9 @@ main {
             .dropdown-item {
                 width: 100%;
                 margin-left: 0;
-                padding: 0.25rem 0.25rem;
+                padding: 0;
                 text-align: center;
+                line-height: 2rem;
             }
         }
     }
@@ -238,12 +239,20 @@ main {
 
 .galeria {
     margin-bottom: 2.5rem;
+    .nome {
+        margin-bottom: 1rem;
+        background-color: $rosa;
+    }
     .descricao {
         font-style: italic;
         font-weight: 100;
         line-height: 1.5rem;
         font-size: 1rem;
         color: $azul;
+        padding-bottom: $component-mobile-margin-bottom;
+        @include media-breakpoint-up(lg) {
+            padding-bottom: $component-desktop-margin-bottom;
+        }
         p {
             padding-right: 1.5rem;
             padding-left: 1.5rem;
@@ -269,12 +278,13 @@ main {
                 width: 100%;
                 text-align: center;
                 height: calc(100% - #{$grid-gutter-width});
+                padding: 2 * $grid-gutter-width;
                 display: flex;
                 flex-wrap: wrap;
                 flex-flow: column wrap;
                 align-items: center;
                 justify-content: center;
-                h1, p {
+                h2, p {
                     color: $branco;
                 }
                 .destaque {
@@ -293,6 +303,7 @@ main {
                     border: 1px solid $branco;
                     border-radius: 2px;
                     display: inline-flex;
+                    flex-wrap: wrap;
                     font-size: .6666666666rem;
                     font-variant: small-caps;
                     font-weight: 100;
@@ -302,6 +313,7 @@ main {
                     padding-right: .5rem;
                     text-transform: lowercase;
                     margin-bottom: 0;
+                    justify-content: center;
                 }
             }
         }
@@ -338,7 +350,7 @@ main {
 }
 
 .clientes {
-    h2 {
+    h1 {
         text-align: center;
         margin-bottom: 3rem;
     }
@@ -360,7 +372,7 @@ footer {
         padding-top: 3rem;
         border-bottom: 1px solid $cinza;
         background-color: $azul;
-        h2 {
+        h1 {
             color: $branco;
             margin-bottom: 2rem;
             text-align: center;
@@ -616,7 +628,7 @@ footer {
     padding-top: 2.5rem;
     padding-bottom: 3.5rem;
     background-color: #fafafa;
-    h2 {
+    h1 {
         text-align: center;
         margin-bottom: 1.5rem;
     }
@@ -644,10 +656,10 @@ footer {
                 flex-flow: column wrap;
                 align-items: center;
                 justify-content: center;
-                h1, p {
+                h2, p {
                     color: $branco;
                 }
-                h1 {
+                h2 {
                     font-size: 1.5rem;
                     line-height: 2rem;
                     margin-bottom: 1rem;
@@ -680,7 +692,11 @@ footer {
 }
 
 .processo {
-    min-height: 100vh;
+    min-height: calc(100vh - 2.5rem);
+    padding-top: 3rem;
+    h1 {
+        text-align: center;
+    }
 }
 
 .equipe {
@@ -688,7 +704,7 @@ footer {
     background-color: #fafafa;
     .titulo {
         @include component-margin-bottom;
-        h2 {
+        h1 {
             text-align: center;
         }
     }
@@ -702,13 +718,14 @@ footer {
             border-radius: 50%;
             background-position: center;
             background-size: cover;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            transform: scale(1.04);
         }
         .nome {
-            text-align: center;
+            text-align: left;
             margin-bottom: 1rem;
             display: block;
-            h1 {
+            h2 {
                 font-size: 1rem;
                 line-height: 1.5rem;
                 svg {
@@ -718,7 +735,7 @@ footer {
             }
         }
         p {
-            text-align: center;
+            text-align: left;
         }
     }
     .membro-clearfix {
