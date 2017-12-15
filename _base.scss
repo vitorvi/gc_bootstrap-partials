@@ -39,6 +39,10 @@ h1 {
     }
 }
 
+section {
+    position: relative;
+}
+
 header {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
     background-color: $branco;
@@ -132,6 +136,17 @@ main {
     height: 100%;
 }
 
+#capa-home {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    @include media-breakpoint-up(lg) {
+        box-shadow: none;
+    }
+    iframe {
+        display: block;
+    }
+}
+
 .sutia {
     border-bottom: 1px solid $cinza;
     .gc-container {
@@ -146,8 +161,11 @@ main {
 }
 
 .filtros {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 0;
+    margin-bottom: 2rem;
+    @include media-breakpoint-up(lg) {
+        margin-top: 2rem;
+    }
     ul {
         margin-bottom: 0;
         li {
@@ -167,6 +185,51 @@ main {
             }
             &.is-checked {
                 font-weight: 400;
+            }
+        }
+    }
+    .dropdown {
+        width: 100%;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        .dropdown-toggle {
+            width: 100%;
+            height: 2rem;
+            text-align: left;
+            border: none;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            color: $azul;
+            &::after {
+                display: inline-block;
+                position: absolute;
+                width: 0;
+                right: 1rem;
+                top: 0.875rem;
+                line-height: 2rem;
+                margin-left: 0.255em;
+                margin-top: auto;
+                margin-bottom: auto;
+                content: "";
+                border-top: 0.25rem solid;
+                border-right: 0.25rem solid transparent;
+                border-bottom: 0;
+                border-left: 0.25rem solid transparent;
+            }
+        }
+        .dropdown-menu {
+            width: 100%;
+            transform: translate3d(0px, 0px, 0px) !important;
+            top: 2rem !important;
+            border: none;
+            margin: 0;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+            border-top: 1px solid $cinza;
+            @include border-radius(0 0 $border-radius $border-radius);
+            .dropdown-item {
+                width: 100%;
+                margin-left: 0;
+                padding: 0.25rem 0.25rem;
+                text-align: center;
             }
         }
     }
@@ -195,6 +258,8 @@ main {
             border-radius: 2px;
             box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
             margin-bottom: .5rem;
+            background-position: center;
+            background-size: cover;
             .conteudo {
                 opacity: 0;
                 position: absolute;
