@@ -6,3 +6,12 @@
         padding-top: $component-desktop-margin-bottom;
     }
 }
+
+.alternativas {
+    > * {
+        display: none;
+    }
+    .selected-alt {
+        display: block;
+    }
+}
