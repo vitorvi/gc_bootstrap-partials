@@ -1,0 +1,225 @@
+#capa-trabalhos {
+    border-bottom: 1px solid $cinza;
+    .gc-container {
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+        blockquote {
+            color: $rosa;
+            text-align: center;
+        }
+    }
+}
+
+#filtros {
+    padding-top: 0;
+    margin-bottom: 2rem;
+    @include media-breakpoint-up(lg) {
+        margin-top: 2rem;
+    }
+    ul {
+        margin-bottom: 0;
+        li {
+            margin-left: 1rem;
+        }
+        li, a {
+            text-decoration: none;
+            display: inline-block;
+            color: $cinza-escuro;
+            text-transform: lowercase;
+            cursor: pointer;
+            margin-bottom: 0;
+            &:first-child {
+                margin-left: 0;
+            }
+            &.is-checked {
+                font-weight: 400;
+            }
+        }
+    }
+    .dropdown {
+        width: 100%;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        .dropdown-toggle {
+            width: 100%;
+            height: 2rem;
+            text-align: left;
+            border: none;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            color: $azul;
+            background-color: $branco;
+            &::after {
+                display: inline-block;
+                position: absolute;
+                width: 0;
+                right: 1rem;
+                top: 0.875rem;
+                line-height: 2rem;
+                margin-left: 0.255em;
+                margin-top: auto;
+                margin-bottom: auto;
+                content: "";
+                border-top: 0.25rem solid;
+                border-right: 0.25rem solid transparent;
+                border-bottom: 0;
+                border-left: 0.25rem solid transparent;
+            }
+        }
+        .dropdown-menu {
+            width: 100%;
+            transform: translate3d(0px, 0px, 0px) !important;
+            top: 2rem !important;
+            border: none;
+            margin: 0;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+            border-top: 1px solid $cinza;
+            z-index: 2;
+            @include border-radius(0 0 $border-radius $border-radius);
+            .dropdown-item {
+                width: 100%;
+                margin: 0;
+                padding: 0 1rem;
+                text-align: right;
+                line-height: 2rem;
+            }
+        }
+    }
+}
+
+#galeria {
+    padding-bottom: $component-mobile-margin-bottom;
+    @include media-breakpoint-up(lg) {
+        padding-bottom: $component-desktop-margin-bottom;
+    }
+    .nome {
+        margin-bottom: 1rem;
+        background-color: $rosa;
+    }
+    .descricao {
+        font-style: italic;
+        color: $azul;
+        padding-bottom: $component-mobile-margin-bottom;
+        @include media-breakpoint-up(lg) {
+            padding-bottom: $component-desktop-margin-bottom;
+        }
+        p {
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 1px solid $rosa;
+        }
+    }
+
+    .thumb-projeto {
+        position: relative;
+        a {
+            display: block;
+            padding-bottom: 100%;
+            background-color: $azul;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+            margin-bottom: .5rem;
+            background-position: center;
+            background-size: cover;
+            .conteudo {
+                opacity: 1;
+                text-align: left;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: calc(100% - #{$grid-gutter-width});
+                padding: 2*$grid-gutter-width 2.5*$grid-gutter-width;
+                display: flex;
+                flex-wrap: wrap;
+                flex-flow: column wrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+                @include media-breakpoint-up(lg) {
+                    opacity: 0;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .titulo, p {
+                    text-align: left;
+                    @include media-breakpoint-up(lg) {
+                         text-align: center;
+                    }
+                }
+                .titulo {
+                    color: $branco;
+                }
+                p {
+                    color: $branco;
+                }
+                .destaque {
+                    font-style: italic;
+                    margin-bottom: 1.5rem;
+                }
+                .categorias {
+                    border: 1px solid $branco;
+                    border-radius: 2px;
+                    display: none;
+                    flex-wrap: wrap;
+                    font-variant: small-caps;
+                    letter-spacing: .5px;
+                    line-height: 1.5rem;
+                    padding-left: .5rem;
+                    padding-right: .5rem;
+                    text-transform: lowercase;
+                    margin-bottom: 0;
+                    justify-content: center;
+                    //max-width: 66.6666%;
+                    @include media-breakpoint-up(lg) {
+                        display: inline-flex;
+                    }
+                }
+            }
+        }
+        &:hover {
+            a {
+                cursor: pointer;
+                //background-color: $rosa;
+                //background-image: none !important;
+            }
+            .conteudo {
+                opacity: 1;
+            }
+        }
+        &.destaque {
+            a {
+                @include media-breakpoint-up(sm) {
+                  padding-bottom: 100%;
+                }
+                @include media-breakpoint-up(md) {
+                  padding-bottom: calc(50% - #{$grid-gutter-width/2});
+                }
+                @include media-breakpoint-up(lg) {
+                  padding-bottom: calc(33.333% - #{$grid-gutter-width*2/3});
+                }
+            }
+        }
+    }
+    .mais-projetos {
+	    margin-top: $component-mobile-margin-bottom/2;
+        @include media-breakpoint-up(lg) {
+            margin-top: $component-desktop-margin-bottom/2;
+        }
+	}
+}
+
+#clientes {
+    h1 {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    background-color: $cinza-claro;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    .cliente {
+        margin-bottom: 3rem;
+        img {
+            width: 100%;
+        }
+    }
+}

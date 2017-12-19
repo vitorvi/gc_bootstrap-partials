@@ -1,0 +1,219 @@
+@mixin componente {
+    margin-bottom: $component-mobile-margin-bottom;
+    @include media-breakpoint-up(lg) {
+        margin-bottom: $component-desktop-margin-bottom;
+    }
+}
+
+@mixin subcomponente {
+    margin-bottom: 0;
+}
+
+#capa-projeto {
+    width: 100vw;
+    height: 100vw;
+    background-position: center;
+    background-size: cover;
+    @include media-breakpoint-up(lg) {
+        height: calc(100vh - 2.5rem);
+    }
+}
+
+//Componentes
+#projeto {
+
+    box-shadow: 0 0 3rem 3rem rgba(0, 0, 0, 0.15);
+    margin-top: 0;
+    padding-top: $component-mobile-margin-bottom;
+    @include media-breakpoint-up(lg) {
+        padding-top: $component-desktop-margin-bottom;
+    }
+    position: relative;
+    
+    // Primeiro registro de cada componente
+    > .p, > .h1, >.h2, >.h3, >.h4, 
+    .intro-projeto, .img-titulo-p, .comentario,
+    .img-cheia, .img-grande, .img-media, .img-pequena, .estampa, 
+    .mosaico-2, .mosaico-3, .mosaico-2-cheio, .mosaico-3-cheio, .carrossel
+     { @include componente; }
+    
+    // Para quando um componente de parágrafo vier seguido a outro elemento de texto (título ou parágrafo)
+    > .h1 + .p, > .h2 + .p, .h3 + .p, .h4 + .p, .p + .p {
+        margin-top: #{ 1rem - $component-mobile-margin-bottom };
+        @include media-breakpoint-up(lg) {
+            margin-top: #{ 1rem - $component-desktop-margin-bottom };
+        }
+    }
+    
+    .intro-projeto {
+        p { 
+            text-align: center;
+            margin-bottom: 0;
+        }
+    }
+    
+    // Componentes que tem a tag img
+    .img-cheia, .img-grande, .img-media, .img-pequena, .img-titulo-p {
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .img-cheia {
+        &.no-gutter.no-margin-bottom {
+            margin-bottom: 0;
+        }
+    }
+
+    //Componentes que têm legenda
+    .img-cheia, .img-grande, .img-media, .img-pequena, .img-titulo-p, 
+    .estampa, .mosaico-2, .mosaico-3, .mosaico-2-cheio, .mosaico-3-cheio {
+        figcaption { margin-top: 1rem; }
+    }
+    
+    //Mosaicos
+    .mosaico-2, .mosaico-3, .mosaico-2-cheio, .mosaico-3-cheio {
+        &.quadrado { 
+            figure { 
+                padding-bottom: 100%; 
+            } 
+        }
+        &.no-gutter {
+            .img {
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        .img {
+            height: 100%;
+            margin-bottom: .5rem;
+            @include media-breakpoint-up(lg) { margin-bottom: 0; }
+            &:last-child { margin-bottom: 0; }
+        }
+
+        figure { padding-bottom: 60%; }
+
+    }
+
+    .estampa {
+        figure {
+            height: 100vw;
+            width: 100vw;
+            @include media-breakpoint-up(lg) {
+                height: 50vh;
+                width: 100vw;
+            }
+        }
+    }
+
+    .carrossel {
+        &:hover {
+            cursor: -webkit-grab;
+            cursor: grab;
+        }
+        .owl-stage-outer {
+            overflow: visible !important;
+            overflow-y: hidden;
+            &:active {
+                cursor: -webkit-grabbing;
+                cursor: grabbing;
+            }
+            .owl-stage {
+                overflow: visible !important;
+                overflow-y: hidden;
+                .owl-item:not(.active) {
+                }
+            }
+        }
+    }
+
+    .comentario {
+        padding-top: $component-mobile-margin-bottom;
+        padding-bottom: $component-mobile-margin-bottom;
+        @include media-breakpoint-up(lg) {
+            padding-top: $component-desktop-margin-bottom;
+            padding-bottom: $component-desktop-margin-bottom;
+        }
+        blockquote { color: $branco; }
+    }
+
+    .img-titulo-p {
+        img {
+            margin-bottom: $component-mobile-margin-bottom;
+            @include media-breakpoint-up(lg) { margin-bottom: 0; }
+        }
+        .titulo { text-align: left; }
+    }
+
+    .no-margin-bottom {
+        margin-bottom: .5rem;
+    }
+}
+
+#projetos-relacionados {
+    position: relative;
+    padding-top: 2.5rem;
+    padding-bottom: 3.5rem;
+    background-color: #fafafa;
+    h1 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    .thumb-projeto {
+        position: relative;
+        a {
+            display: block;
+            padding-bottom: 66.666%;
+            background-color: $azul;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+            margin-bottom: .5rem;
+            background-position: center;
+            background-size: cover;
+            .conteudo {
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                height: calc(100% - #{$grid-gutter-width});
+                display: flex;
+                flex-wrap: wrap;
+                flex-flow: column wrap;
+                align-items: center;
+                justify-content: center;
+                h2, p {
+                    color: $branco;
+                }
+                h2 {
+                    text-align: center;
+                }
+                .categorias {
+                    border: 1px solid $branco;
+                    border-radius: 2px;
+                    display: inline-flex;
+                    font-variant: small-caps;
+                    font-weight: 100;
+                    letter-spacing: .5px;
+                    line-height: 1.5rem;
+                    padding-left: .5rem;
+                    padding-right: .5rem;
+                    text-transform: lowercase;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &:hover {
+            a {
+                cursor: pointer;
+            }
+            .conteudo {
+                opacity: 1;
+            }
+        }
+    }
+}

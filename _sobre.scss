@@ -1,0 +1,113 @@
+.processo {
+    min-height: calc(100vh - 2.5rem);
+    padding-top: 3rem;
+    h1 {
+        text-align: center;
+    }
+}
+
+.equipe {
+    padding-top: 3rem;
+    background-color: $cinza-claro;
+    .titulo {
+        @include componente;
+        h1 {
+            text-align: center;
+            margin-bottom: 0;
+        }
+    }
+    .membro {
+        @include componente;
+        figure {
+            padding-bottom: 100%;
+            border-radius: 50%;
+            background-position: center;
+            background-size: cover;
+            margin-bottom: 1.5rem;
+            transform: scale(1.04);
+        }
+        .nome {
+            text-align: center;
+            margin-bottom: .5rem;
+            display: block;
+            color: $azul;
+            svg {
+                height: 0.75rem;
+                margin-right: .25rem;
+                fill: $azul;
+                transition: fill .1s linear;
+                margin-bottom: -2px;
+                &:hover {
+                    fill: $rosa;
+                }
+            }
+        }
+        p {
+            text-align: center;
+            font-weight: 100;
+        }
+        @include media-breakpoint-up(md) {
+            margin-right: 1px;
+            .nome, p {
+                text-align: left;
+            }
+        }
+    }
+    .membro-clearfix {
+        @include media-breakpoint-up(lg) {
+            margin-right: 1px;
+        }
+        height: 1px;
+    }
+    #membros-mobile {
+        padding-left: .75rem;
+        padding-right: .75rem;
+        .owl-stage-outer {
+            overflow: visible !important;
+            overflow-y: hidden;
+            z-index: 1;
+            &:active {
+                cursor: -webkit-grabbing;
+                cursor: grabbing;
+            }
+            .owl-stage {
+                overflow: visible !important;
+                overflow-y: hidden;
+                .owl-item:not(.active) {
+                }
+            }
+            .owl-item {
+                a, p {
+                    opacity: 1;
+                    transition: opacity .3s linear;
+                }
+                &:not(.active) {
+                    a, p {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+        .owl-nav {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            width: calc(100% - 1.5rem);
+            top: 0;
+            padding-top: calc(100% - 2rem);
+            .owl-prev, .owl-next {
+                margin-left: -1rem;
+                margin-right: -1rem;
+                background: transparent;
+                color: $rosa;
+                font-size: 1.5rem;
+                line-height: 1rem;
+                padding: 0;
+                border-radius: 0;
+                font-weight: 400;
+                z-index: 2;
+            }
+        }
+    }
+}

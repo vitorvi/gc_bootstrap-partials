@@ -1,0 +1,61 @@
+footer {
+    padding-top: 2.5rem;
+    margin-top: -2.5rem;
+    #formulario-contato {
+        padding-top: 3rem;
+        border-bottom: 1px solid $cinza;
+        background-color: $azul;
+        h1 {
+            color: $branco;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        button {
+            margin-top: 2rem;
+        }
+        form {
+            margin-bottom: 3rem;
+        }
+    }
+    #contatos {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        background-color: $azul;
+        ul {
+            list-style-type: none;
+            li {
+                margin-top: .5rem;
+                color: $branco;
+                &:first-child {
+                    margin-top: 0;
+                }
+                a {
+                    font-style: italic;
+                    color: $branco;
+                }
+            }
+        }
+        address {
+            ul {
+                border-left: 1px solid $cinza;
+                padding-left: 1rem;
+            }
+        }
+        .midias {
+            ul {
+                text-align: right;
+                li {
+                    display: inline-flex;
+                    margin-left: .5rem;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    img {
+                        height: 1rem;
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}

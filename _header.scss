@@ -1,0 +1,87 @@
+header {
+
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+    background-color: $branco;
+    width: 100%;
+    top: 0;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    z-index: 10;
+
+    .logo {
+        svg {
+            display: block;
+            height: 1.5rem;
+        }
+    }
+
+    #menu-button {
+        padding: 0;
+        border: 0;
+        &.collapsed {
+            svg {
+                
+            }
+        }
+        svg {
+            height: 1.25rem;
+            width: 1.25rem;
+            display: block;
+        }
+    }
+
+    #menu-mobile {
+        width: 100%;
+        background-color: $branco;
+        &.show {
+            ul {
+                opacity: 1;
+                transition: opacity .25s linear;
+                li {
+                    line-height: 2rem;
+                    transition: line-height .25s ease;
+                }
+            }
+        }
+        ul {
+            opacity: 0;
+            text-align: center;
+            height: calc(100vh - 2.5rem);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column wrap;
+            transition: opacity .1s linear;
+            li {
+                transition: line-height 0s ease .25s;
+                list-style-type: none;
+                line-height: 2.5rem;
+                font-size: 1rem;
+                font-variant: all-small-caps;
+                letter-spacing: 1px;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    #menu-desktop {
+        ul {
+            margin-bottom: 0;
+                li {
+                margin-left: 1rem;
+                display: inline-block;
+                text-transform: uppercase;
+                margin-bottom: 0;
+                a {
+                    color: $azul;
+                    font-variant: small-caps;
+                    text-transform: lowercase;
+                    &.current-page {
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+
+}
