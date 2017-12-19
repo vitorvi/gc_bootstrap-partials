@@ -4,60 +4,94 @@
 @include basic-font-face($ocre);
 
 @mixin titulo-1 {
-	font-size: 2.5rem; // 60px
-    line-height: 3rem;
-    margin-bottom: 1rem;
     font-family: ocre-poster-sans;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-bottom: 1rem;
     margin-top: 1.5rem;
+    @include media-breakpoint-up(lg) {
+    	font-size: 2.5rem; // 60px
+        line-height: 3rem;
+        margin-bottom: 1rem;
+        margin-top: 1.5rem;
+    }
 }
 
 @mixin titulo-2 {
-	font-size: 2rem; // 48px
-    line-height: 2.5rem;
+	font-family: ocre-poster-sans;
+    font-size: 1.5rem;
+    line-height: 2rem;
     margin-bottom: 1rem;
-    font-family: ocre-poster-sans;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
+    @include media-breakpoint-up(lg) {
+        font-size: 2rem; // 48px
+        line-height: 2.5rem;
+        margin-bottom: 1rem;
+        margin-top: 1.5rem;
+    }
 }
 
 @mixin titulo-3 {
-	font-size: 1.5rem; // 36px
-    line-height: 2rem;
+	font-family: ocre-poster-sans;
+    font-size: 1.3333333333rem;
+    line-height: 1.5rem;
     margin-bottom: 1rem;
-    font-family: ocre-poster-sans;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
+    @include media-breakpoint-up(lg) {
+        font-size: 1.5rem; // 36px
+        line-height: 2rem;
+        margin-bottom: 1rem;
+        margin-top: 1.5rem;
+    }
 }
 
 @mixin titulo-4 {
-	font-size: 1.3333333333rem; // 32px
-    line-height: 2rem;
+	font-family: ocre-poster-sans;
+    font-size: 1rem;
+    line-height: 1.5rem;
     margin-bottom: 1rem;
-    font-family: ocre-poster-sans;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
+    @include media-breakpoint-up(lg) {
+        font-size: 1.3333333333rem; // 32px
+        line-height: 2rem;
+        margin-bottom: 1rem;
+        margin-top: 1.5rem;
+    }
 }
 
 @mixin titulo-5 {
-	font-size: .91666666666666rem; // 22px
+	font-family: ocre-sans;
+    font-variant: all-small-caps;
+    font-size: .91666666666666rem; // 22px
     line-height: 1.25rem;
     margin-bottom: .5rem;
-    font-family: ocre-sans;
-    font-variant: all-small-caps;
     margin-top: .5rem;
 }
 
 @mixin texto-grande {
-	font-size: 1.3333333333rem; // 32px
-    line-height: 2rem;
-    font-weight: 100;
-    margin-bottom: .5rem;
-    font-family: ocre-sans;
-}
-
-@mixin texto-medio {
-	font-size: .91666666666666rem; // 22px
+	font-family: ocre-sans;
+    font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 100;
     margin-bottom: .5rem;
+    @include media-breakpoint-up(lg) {
+        font-size: 1.3333333333rem; // 32px
+        line-height: 2rem;
+        font-weight: 100;
+        margin-bottom: .5rem;
+    }
+}
+
+@mixin texto-medio {
+	font-size: 0.6666666666rem;
+    line-height: 1rem;
+    font-weight: 100;
+    margin-bottom: .5rem;
     font-family: ocre-sans;
+    @include media-breakpoint-up(lg) {
+        font-size: .91666666666666rem; // 22px
+        line-height: 1.5rem;
+    }
 }
 
 @mixin texto-pequeno {

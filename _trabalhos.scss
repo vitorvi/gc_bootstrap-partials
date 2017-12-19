@@ -1,10 +1,15 @@
 #capa-trabalhos {
     border-bottom: 1px solid $cinza;
-    .gc-container {
-        padding-top: 3rem;
-        padding-bottom: 2rem;
-        blockquote {
-            color: $rosa;
+    padding-top: $component-mobile-margin-bottom;
+    padding-bottom: $component-mobile-margin-bottom;
+    @include media-breakpoint-up(lg) {
+        padding-top: $component-desktop-margin-bottom;
+        padding-bottom: $component-desktop-margin-bottom;
+    }
+    blockquote {
+        color: $rosa;
+        text-align: left;
+        @include media-breakpoint-up(lg) {
             text-align: center;
         }
     }
@@ -103,9 +108,13 @@
             padding-bottom: $component-desktop-margin-bottom;
         }
         p {
-            padding-right: 1.5rem;
-            padding-left: 1.5rem;
             border-left: 1px solid $rosa;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            @include media-breakpoint-up(lg) {
+                padding-right: 1.5rem;
+                padding-left: 1.5rem;
+            }
         }
     }
 
@@ -117,9 +126,12 @@
             background-color: $azul;
             border-radius: 2px;
             box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
-            margin-bottom: .5rem;
             background-position: center;
             background-size: cover;
+            margin-bottom: 1rem;
+            @include media-breakpoint-up(lg) {
+                margin-bottom: .5rem;
+            }
             .conteudo {
                 opacity: 1;
                 text-align: left;
@@ -155,6 +167,10 @@
                 .destaque {
                     font-style: italic;
                     margin-bottom: 1.5rem;
+                    display: none;
+                    @include media-breakpoint-up(lg) {
+                        display: block;
+                    }
                 }
                 .categorias {
                     border: 1px solid $branco;
@@ -187,6 +203,9 @@
             }
         }
         &.destaque {
+            .titulo {
+                margin-top: 0;
+            }
             a {
                 @include media-breakpoint-up(sm) {
                   padding-bottom: 100%;
