@@ -9,9 +9,28 @@
 
 .alternativas {
     > * {
-        display: none;
+        position: relative;
+        .alt-marcador {
+            position: absolute;
+            top: .5rem;
+            right: .5rem;
+            height: 1rem;
+            width: 1rem;
+            border-radius: .5rem;
+            background-color: #000;
+            text-align: center;
+            color: #fff;
+            font-weight: 100;
+            font-variant: all-small-caps;
+            transition: all .1s ease-in-out;
+            opacity: 0;
+            transform: translateY(.5rem);
+        }
     }
-    .selected-alt {
-        display: block;
+    &:hover {
+        .alt-marcador {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }

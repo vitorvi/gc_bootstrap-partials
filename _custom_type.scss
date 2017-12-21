@@ -92,6 +92,12 @@
         font-weight: 100;
         margin-bottom: .5rem;
     }
+    &:last-child {
+        margin-bottom: 0;
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 0;
+        }
+    }
 }
 
 @mixin texto-medio {
@@ -104,6 +110,12 @@
         font-size: .91666666666666rem; // 22px
         line-height: 1.5rem;
     }
+    &:last-child {
+        margin-bottom: 0;
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 0;
+        }
+    }
 }
 
 @mixin texto-pequeno {
@@ -112,6 +124,12 @@
 	font-weight: 100;
 	margin-bottom: .5rem;
 	font-family: ocre-sans;
+    &:last-child {
+        margin-bottom: 0;
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 0;
+        }
+    }
 }
 
 h1, .h1 { font-size: $h1-font-size; }
