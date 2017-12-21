@@ -74,6 +74,15 @@
     .dropdown {
         width: 100%;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        &.show {
+            .dropdown-toggle {
+                .filtro-aplicado {
+                    &.show {
+                        display: none;
+                    }
+                }
+            }
+        }
         .dropdown-toggle, .filtro-aplicado {
             width: 100%;
             height: 2rem;
@@ -83,7 +92,7 @@
             padding-right: 1rem;
             color: $azul;
             background-color: $branco;
-            .filtro-aplicado {
+            .filtro-aplicado, .filtro-aplicado {
                 display: none;
                 position: absolute;
                 top: 0;
@@ -120,7 +129,7 @@
             border-top: 1px solid transparent;
             z-index: 2;
             padding: 0;
-            transition: height .5s ease-in-out .25s, border-top .15s linear, box-shadow .1s linear .75s, opacity 0s linear .75s;
+            transition: height .25s ease-in-out .25s, border-top .15s linear, box-shadow .1s linear .75s, opacity 0s linear .75s;
             display: flex;
             height: 0;
             flex-flow: row wrap;
