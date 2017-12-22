@@ -1,5 +1,5 @@
 #capa-trabalhos {
-    border-bottom: 1px solid $cinza;
+    //border-bottom: 1px solid $cinza;
     padding-top: $component-mobile-margin-bottom;
     padding-bottom: $component-mobile-margin-bottom;
     @include media-breakpoint-up(lg) {
@@ -47,9 +47,10 @@
 
 #filtros {
     padding-top: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     @include media-breakpoint-up(lg) {
         margin-top: 2rem;
+        margin-bottom: 2rem;
     }
     ul {
         margin-bottom: 0;
@@ -73,17 +74,9 @@
     }
     .dropdown {
         width: 100%;
+        height: 2rem;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-        &.show {
-            .dropdown-toggle {
-                .filtro-aplicado {
-                    &.show {
-                        display: none;
-                    }
-                }
-            }
-        }
-        .dropdown-toggle, .filtro-aplicado {
+        .dropdown-toggle {
             width: 100%;
             height: 2rem;
             text-align: left;
@@ -92,14 +85,16 @@
             padding-right: 1rem;
             color: $azul;
             background-color: $branco;
-            .filtro-aplicado, .filtro-aplicado {
-                display: none;
+            .filtro-aplicado, .chamada-filtro {
+                opacity: 0;
                 position: absolute;
                 top: 0;
-                left: 0;
+                left: 2*$grid-gutter-width;
                 line-height: 2rem;
+                transition: opacity .25s linear;
                 &.show {
-                    display: block;
+                    opacity: 1;
+                    transition: opacity .25s linear .5s;
                 }
             }
             &::after {
@@ -129,7 +124,7 @@
             border-top: 1px solid transparent;
             z-index: 2;
             padding: 0;
-            transition: height .25s ease-in-out .25s, border-top .15s linear, box-shadow .1s linear .75s, opacity 0s linear .75s;
+            transition: height .25s ease-in-out .25s, border-top .15s linear, box-shadow .1s linear .75s, opacity 1s linear .5s;
             display: flex;
             height: 0;
             flex-flow: row wrap;
@@ -139,7 +134,7 @@
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
                 border-top: 1px solid $cinza;
                 pointer-events: all;
-                transition: height .5s ease-in-out .25s, border-top .15s linear .75s, box-shadow .1s linear, opacity 0s linear;
+                transition: height .5s ease-in-out .25s, border-top .15s linear .75s, box-shadow .25s linear, opacity 0s linear;
                 .dropdown-item {
                     opacity: 1;
                     transition: opacity .15s linear .75s;
@@ -181,7 +176,7 @@
     .descricao {
         font-style: italic;
         color: $azul;
-        padding-bottom: $component-mobile-margin-bottom;
+        padding-bottom: $component-mobile-margin-bottom * 0.75;
         @include media-breakpoint-up(lg) {
             padding-bottom: $component-desktop-margin-bottom;
         }
@@ -207,6 +202,7 @@
             background-position: center;
             background-size: cover;
             margin-bottom: 1rem;
+            position: relative;
             @include media-breakpoint-up(lg) {
                 margin-bottom: .5rem;
             }
@@ -217,14 +213,19 @@
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: calc(100% - #{$grid-gutter-width});
-                padding: 2*$grid-gutter-width 2.5*$grid-gutter-width;
+                height: 100%;
+                padding: 2 * $grid-gutter-width;
                 display: flex;
                 flex-wrap: wrap;
                 flex-flow: column wrap;
                 justify-content: flex-start;
                 align-items: flex-start;
+                background: linear-gradient(to bottom, rgba($azul, .9), rgba($rosa, 0), transparent);
+                //background: radial-gradient(ellipse farthest-corner at 0px 0px, rgba($azul, .9), rgba($rosa, 0), transparent);
+                transition: opacity .1s linear;
                 @include media-breakpoint-up(lg) {
+                    background: linear-gradient(to bottom right, rgba($azul, .9), rgba($rosa, .9));
+                    //background: radial-gradient(ellipse farthest-corner at 0px 0px, rgba($azul, .9), rgba($rosa, .9));
                     opacity: 0;
                     text-align: center;
                     justify-content: center;
@@ -238,32 +239,45 @@
                 }
                 .titulo {
                     color: $branco;
+                    margin-bottom: .5rem;
+                    @include media-breakpoint-up(lg) {
+                         text-align: center;
+                    }
                 }
-                p {
-                    color: $branco;
+                hr {
+                    width: 33.3333%;
+                    border-bottom: 1px solid $branco;
                 }
                 .destaque {
-                    font-style: italic;
+                    //font-style: italic;
+                    font-variant: all-small-caps;
+                    font-weight: 100;
+                    letter-spacing: 1px;
                     margin-bottom: .5rem;
                     display: none;
+                    color: $branco;
                     @include media-breakpoint-up(lg) {
                         display: block;
                     }
                 }
                 .categorias {
-                    border: 1px solid $branco;
                     border-radius: 2px;
                     display: none;
                     flex-wrap: wrap;
-                    font-variant: small-caps;
                     letter-spacing: .5px;
-                    line-height: 1.5rem;
+                    line-height: 1rem;
                     padding-left: .5rem;
                     padding-right: .5rem;
-                    text-transform: lowercase;
                     margin-bottom: 0;
                     justify-content: center;
+                    color: $branco;
+                    //font-style: italic;
+                    word-spacing: .125rem;
+                    //border: 1px solid $branco;
                     //max-width: 66.6666%;
+                    //text-transform: lowercase;
+                    //font-variant: all-small-caps;
+                    font-weight: 100;
                     @include media-breakpoint-up(lg) {
                         display: inline-flex;
                     }
