@@ -37,14 +37,14 @@
     position: relative;
     
     // Primeiro registro de cada componente
-    > .p, > .h1, >.h2, >.h3, >.h4, 
-    .intro-projeto, .img-titulo-p, .comentario,
+    > .titulo, > .subtitulo, > .paragrafo, 
+    .intro-projeto, .img-subtitulo-paragrafo, .comentario,
     .img-cheia, .img-grande, .img-media, .img-pequena, .estampa, 
-    .mosaico-2, .mosaico-3, .mosaico-2-cheio, .mosaico-3-cheio, .carrossel
+    .mosaico-duplo, .mosaico-triplo, .carrossel
      { @include componente; }
     
     // Para quando um componente de parágrafo vier seguido a outro elemento de texto (título ou parágrafo)
-    > .h1 + .p, > .h2 + .p, .h3 + .p, .h4 + .p, .p + .p {
+    .titulo + .paragrafo, .subtitulo + .paragrafo, .paragrafo + .paragrafo {
         margin-top: #{ 1rem - $component-mobile-margin-bottom };
         @include media-breakpoint-up(lg) {
             margin-top: #{ 1rem - $component-desktop-margin-bottom };
@@ -59,7 +59,7 @@
     }
     
     // Componentes que tem a tag img
-    .img-cheia, .img-grande, .img-media, .img-pequena, .img-titulo-p {
+    .img-cheia, .img-grande, .img-media, .img-pequena, .img-subtitulo-paragrafo {
         img {
             width: 100%;
             height: 100%;
@@ -73,13 +73,13 @@
     }
 
     //Componentes que têm legenda
-    .img-cheia, .img-grande, .img-media, .img-pequena, .img-titulo-p, 
-    .estampa, .mosaico-2, .mosaico-3, .mosaico-2-cheio, .mosaico-3-cheio {
+    .img-cheia, .img-grande, .img-media, .img-pequena, .img-subtitulo-paragrafo, 
+    .estampa, .mosaico-duplo, .mosaico-triplo {
         figcaption { margin-top: 1rem; }
     }
     
     //Mosaicos
-    .mosaico-2, .mosaico-3, .mosaico-2-cheio, .mosaico-3-cheio {
+    .mosaico-duplo, .mosaico-triplo {
         &.quadrado { 
             figure { 
                 padding-bottom: 100%; 
@@ -146,12 +146,12 @@
         blockquote { color: $branco; }
     }
 
-    .img-titulo-p {
+    .img-subtitulo-paragrafo {
         img {
             margin-bottom: $component-mobile-margin-bottom;
             @include media-breakpoint-up(lg) { margin-bottom: 0; }
         }
-        .titulo { text-align: left; }
+        .subtitulo { text-align: left; }
     }
 
     .no-margin-bottom {
@@ -164,65 +164,8 @@
     padding-top: 2.5rem;
     padding-bottom: 3.5rem;
     background-color: #fafafa;
-    h1 {
+    .titulo {
         text-align: center;
         margin-bottom: 1.5rem;
-    }
-    .thumb-projeto {
-        position: relative;
-        a {
-            display: block;
-            padding-bottom: 66.666%;
-            background-color: $azul;
-            border-radius: 2px;
-            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
-            margin-bottom: 1rem;
-            background-position: center;
-            background-size: cover;
-            @include media-breakpoint-up(lg) {
-                margin-bottom: .5rem;
-            }
-            .conteudo {
-                opacity: 0;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                text-align: center;
-                height: calc(100% - #{$grid-gutter-width});
-                display: flex;
-                flex-wrap: wrap;
-                flex-flow: column wrap;
-                align-items: center;
-                justify-content: center;
-                h2, p {
-                    color: $branco;
-                }
-                h2 {
-                    text-align: center;
-                }
-                .categorias {
-                    border: 1px solid $branco;
-                    border-radius: 2px;
-                    display: inline-flex;
-                    font-variant: small-caps;
-                    font-weight: 100;
-                    letter-spacing: .5px;
-                    line-height: 1.5rem;
-                    padding-left: .5rem;
-                    padding-right: .5rem;
-                    text-transform: lowercase;
-                    margin-bottom: 0;
-                }
-            }
-        }
-        &:hover {
-            a {
-                cursor: pointer;
-            }
-            .conteudo {
-                opacity: 1;
-            }
-        }
     }
 }
