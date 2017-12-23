@@ -61,9 +61,15 @@ footer {
                     &:first-child {
                         margin-left: 0;
                     }
-                    img {
+                    svg, img {
+                        fill: $branco;
                         height: 1rem;
-                        width: auto;
+                        transform: translateY(0);
+                        transition: fill .1s linear, transform .1s ease-in-out;
+                        &:hover {
+                            fill: $rosa;
+                            //transform: translateY(-.125rem);
+                        }
                     }
                 }
             }

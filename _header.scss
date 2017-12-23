@@ -12,6 +12,10 @@ header {
         svg {
             display: block;
             height: 1.5rem;
+            transition: fill .1s linear;
+            &:hover {
+                fill: $rosa;
+            }
         }
     }
 
@@ -76,8 +80,15 @@ header {
                     color: $azul;
                     font-variant: small-caps;
                     text-transform: lowercase;
+                    transition: color .1s linear;
                     &.current-page {
                         font-weight: 400;
+                        &:hover {
+                            color: $azul;
+                        }
+                    }
+                    &:hover {
+                        color: $rosa;
                     }
                 }
             }
