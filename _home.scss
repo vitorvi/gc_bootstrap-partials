@@ -1,10 +1,15 @@
 #capa-home {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
     z-index: 1;
+    max-height: calc(100vh - 7.5rem);
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
     @include media-breakpoint-up(lg) {
         box-shadow: none;
     }
     iframe {
         display: block;
+        pointer-events: none;
     }
 }

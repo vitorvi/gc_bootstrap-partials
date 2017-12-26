@@ -66,7 +66,7 @@
         }
     }
 
-    .img-cheia {
+    .img-cheia, .estampa {
         &.no-gutter.no-margin-bottom {
             margin-bottom: 0;
         }
@@ -85,10 +85,23 @@
                 padding-bottom: 100%; 
             } 
         }
+        &.paisagem { 
+            figure { 
+                padding-bottom: 60%; 
+            } 
+        }
+        &.retrato { 
+            figure { 
+                padding-bottom: 166.6666%; 
+            } 
+        }
         &.no-gutter {
             .img {
                 padding-left: 0;
                 padding-right: 0;
+                margin-bottom: 0;
+            }
+            &.no-margin-bottom {
                 margin-bottom: 0;
             }
         }
@@ -99,8 +112,10 @@
             @include media-breakpoint-up(lg) { margin-bottom: 0; }
             &:last-child { margin-bottom: 0; }
         }
-
-        figure { padding-bottom: 60%; }
+        //formato default:
+        figure { 
+            padding-bottom: 60%;
+        }
 
     }
 

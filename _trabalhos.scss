@@ -35,12 +35,38 @@
             color: $cinza-escuro;
             cursor: pointer;
             margin-bottom: 0;
+            transition: color .1s linear;
+            position: relative;
             &:first-child {
                 margin-left: 0;
             }
             &.is-checked {
                 font-weight: 400;
                 color: $rosa;
+            }
+            @include media-breakpoint-up(lg) {
+                &::after {
+                    content: '';
+                    width: 0;
+                    position: absolute;
+                    height: 1px;
+                    background-color: $rosa;
+                    bottom: -.125rem;
+                    left: 0;
+                    transition: width .1s ease;
+                }
+                &:hover {
+                    &::after {
+                        content: '';
+                        width: 100%;
+                        position: absolute;
+                        height: 1px;
+                        background-color: $rosa;
+                        bottom: -.125rem;
+                        left: 0;
+                        transition: width .1s ease;
+                    }
+                }
             }
         }
     }
@@ -188,7 +214,7 @@
         .conteudo {
             pointer-events: none;
             border-radius: .125rem;
-            opacity: 1;
+            opacity: 0;
             text-align: left;
             position: absolute;
             top: 0;
@@ -207,7 +233,6 @@
             @include media-breakpoint-up(lg) {
                 //background: linear-gradient(to bottom right, rgba($azul, .9), rgba($rosa, .9));
                 background: radial-gradient(ellipse farthest-corner at 0px 0px, rgba($azul, .9), rgba($rosa, .9));
-                opacity: 0;
                 text-align: center;
                 justify-content: center;
                 align-items: center;
@@ -280,6 +305,7 @@
                 }
                 hr {
                     width: calc(33.3333% + #{$grid-gutter-width/2});
+                    border-width: 2px;
                 }
             }
         }
