@@ -40,7 +40,7 @@
     > .titulo, > .subtitulo, > .paragrafo, 
     .intro-projeto, .img-subtitulo-paragrafo, .comentario,
     .img-cheia, .img-grande, .img-media, .img-pequena, .estampa, 
-    .mosaico-duplo, .mosaico-triplo, .carrossel
+    .mosaico-duplo, .mosaico-triplo, .carrossel, .fonte
      { @include componente; }
     
     // Para quando um componente de parágrafo vier seguido a outro elemento de texto (título ou parágrafo)
@@ -149,6 +149,20 @@
                 }
             }
         }
+        .owl-dot {
+            span {
+                background-color: transparent;
+                border: 1px solid $azul;
+                &:hover {
+                    background-color: $azul;
+                }
+            }
+            &.active {
+                span {
+                    background-color: $azul;
+                }
+            }
+        }
     }
 
     .comentario {
@@ -167,6 +181,28 @@
             @include media-breakpoint-up(lg) { margin-bottom: 0; }
         }
         .subtitulo { text-align: left; }
+    }
+
+    .fonte {
+        p {
+            font-size: 3rem;
+            line-height: 4rem;
+            outline: none;
+            caret-color: $azul;
+            height: 14rem;
+            overflow-y: scroll;
+            border: 1px solid transparent;
+            border-radius: .125rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            transition: border .1s linear;
+            &:focus {
+                border: 1px solid $azul;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $azul;
+            }
+        }
     }
 
     .no-margin-bottom {

@@ -1,15 +1,37 @@
 #capa-home {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
     z-index: 1;
-    max-height: calc(100vh - 7.5rem);
+    max-height: calc(100vh - 5rem);
     overflow-y: hidden;
     display: flex;
     align-items: center;
+    margin-top: -2.5rem;
     @include media-breakpoint-up(lg) {
         box-shadow: none;
     }
-    iframe {
+    video {
         display: block;
         pointer-events: none;
+    }
+    .chamada-home {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        h1 {
+            color: $branco;
+            text-align: center;
+            font-variant: unset;
+            font-family: ocre-poster-sans-swashes;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            margin-bottom: 0;
+            margin-top: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            @include media-breakpoint-up(lg) {
+                font-size: 3rem;
+                line-height: 3rem;
+            }
+        }
     }
 }

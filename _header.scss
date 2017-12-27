@@ -7,6 +7,7 @@ header {
     padding-top: .5rem;
     padding-bottom: .5rem;
     z-index: 10;
+    transition: background-color .1s linear;
 
     .logo {
         svg {
@@ -129,5 +130,29 @@ header {
             }
         }
     }
-
+    &.header-home:not(.solid) {
+        background-color: transparent;
+        .logo {
+            svg {
+                fill: $branco;
+                &:hover {
+                    fill: $rosa;
+                }
+            }
+        }
+        #menu-button {
+            svg {
+                stroke: $branco;
+            }
+        }
+        #menu-desktop {
+            ul {
+                li {
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
 }
