@@ -112,19 +112,16 @@ header {
                         transition: width .1s ease;
                         border-radius: 1px;
                     }
-                    &:hover {
-                        //color: $rosa;
-                        &::after {
-                            content: '';
-                            width: 100%;
-                            position: absolute;
-                            height: 2px;
-                            background-color: $rosa;
-                            bottom: -.125rem;
-                            left: 0;
-                            transition: width .1s ease;
-                            border-radius: 1px;
-                        }
+                    &:hover::after {
+                        content: '';
+                        width: 100%;
+                        position: absolute;
+                        height: 2px;
+                        background-color: $rosa;
+                        bottom: -.125rem;
+                        left: 0;
+                        transition: width .1s ease;
+                        border-radius: 1px;
                     }
                 }
             }
@@ -150,6 +147,28 @@ header {
                 li {
                     a {
                         color: $white;
+                        &::after {
+                            content: '';
+                            width: 0;
+                            position: absolute;
+                            height: 2px;
+                            background-color: $branco;
+                            bottom: -.125rem;
+                            left: 0;
+                            transition: width .1s ease;
+                            border-radius: 1px;
+                        }
+                        &:hover::after {
+                            content: '';
+                            width: 100%;
+                            position: absolute;
+                            height: 2px;
+                            background-color: $branco;
+                            bottom: -.125rem;
+                            left: 0;
+                            transition: width .1s ease;
+                            border-radius: 1px;
+                        }
                     }
                 }
             }
