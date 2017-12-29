@@ -202,8 +202,8 @@
         display: block;
         padding-bottom: 100%;
         background-color: $azul;
-        border-radius: 2px;
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+        border-radius: .125rem;
+        box-shadow: 0 2px 0.5rem 0 rgba($azul, 0.2);
         background-position: center;
         background-size: cover;
         margin-bottom: 1rem;
@@ -213,29 +213,29 @@
         }
         .conteudo {
             pointer-events: none;
-            border-radius: .125rem;
-            opacity: 0;
+            border-radius: 0 0 .125rem .125rem;
+            opacity: 1;
             text-align: left;
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            padding: 2 * $grid-gutter-width;
+            padding: $grid-gutter-width;
             display: flex;
-            flex-wrap: wrap;
-            flex-flow: column wrap;
-            justify-content: flex-start;
+            flex-flow: column nowrap;
+            justify-content: space-between;
             align-items: flex-start;
-            //linear-gradient(to bottom, rgba($azul, .9), rgba($rosa, 0), transparent);
-            background: radial-gradient(ellipse farthest-corner at 0px 0px, rgba($azul, .9), rgba($rosa, 0), transparent);
             transition: opacity .1s linear;
+            @include media-breakpoint-down(md) {
+                background-image: linear-gradient(to bottom, rgba($branco, 1), rgba($branco, 1)) !important;
+            }
             @include media-breakpoint-up(lg) {
-                //background: linear-gradient(to bottom right, rgba($azul, .9), rgba($rosa, .9));
-                background: radial-gradient(ellipse farthest-corner at 0px 0px, rgba($azul, .9), rgba($rosa, .9));
                 text-align: center;
                 justify-content: center;
                 align-items: center;
+                opacity: 0;
+                padding: 2 * $grid-gutter-width;
+                height: 100%;
             }
             .titulo, p {
                 text-align: left;
@@ -244,36 +244,42 @@
                 }
             }
             .titulo {
-                color: $branco;
                 margin-bottom: .5rem;
+                margin-top: 0;
                 @include media-breakpoint-up(lg) {
                      text-align: center;
+                     color: $branco;
                 }
             }
-            hr {
-                width: 33.3333%;
-                border-bottom: 1px solid $branco;
-            }
             .categorias {
-                border-radius: 2px;
-                display: none;
-                flex-wrap: wrap;
-                letter-spacing: .5px;
-                line-height: 1rem;
-                padding-left: .5rem;
-                padding-right: .5rem;
-                margin-bottom: 0;
-                justify-content: center;
-                color: $branco;
-                //font-style: italic;
-                word-spacing: .125rem;
-                //border: 1px solid $branco;
-                //max-width: 66.6666%;
-                //text-transform: lowercase;
-                //font-variant: all-small-caps;
-                font-weight: 100;
-                @include media-breakpoint-up(lg) {
+                width: 100%;
+                hr {
+                    width: 100%;
+                    border-bottom: 1px solid $branco;
+                    margin-left: auto;
+                    margin-right: auto;
+                    opacity: .5;
+                    border-width: 1px;
+                    @include media-breakpoint-up(lg) {
+                        width: 33.3333%;
+                        border-width: 2px;
+                    }
+                }
+                p {
                     display: inline-flex;
+                    flex-wrap: wrap;
+                    letter-spacing: .5px;
+                    line-height: 1rem;
+                    margin-bottom: 0;
+                    word-spacing: .125rem;
+                    font-weight: 100;
+                    color: $azul;
+                    @include media-breakpoint-up(lg) {
+                        padding-left: .5rem;
+                        padding-right: .5rem;
+                        justify-content: center;
+                        color: $branco;
+                    }
                 }
             }
         }
@@ -304,8 +310,10 @@
                     margin-top: 0;
                 }
                 hr {
-                    width: calc(33.3333% + #{$grid-gutter-width/2});
-                    border-width: 2px;
+                    width: 100%;
+                    @include media-breakpoint-up(lg) {
+                        width: calc(33.3333% + #{$grid-gutter-width/2});
+                    }
                 }
             }
         }

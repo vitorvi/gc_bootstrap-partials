@@ -4,7 +4,7 @@
 @include basic-font-face($ocre);
 
 @mixin titulo-1 {
-    font-family: ocre-poster-sans;
+    font-family: ocre-poster-sans, sans-serif;
     font-size: 2rem;
     line-height: 2rem;
     margin-bottom: 1rem;
@@ -21,7 +21,7 @@
 }
 
 @mixin titulo-2 {
-	font-family: ocre-poster-sans;
+	font-family: ocre-poster-sans, sans-serif;
     font-size: 1.5rem;
     line-height: 2rem;
     margin-bottom: 1rem;
@@ -38,7 +38,7 @@
 }
 
 @mixin titulo-3 {
-	font-family: ocre-sans;
+	font-family: ocre-sans, sans-serif;
     font-size: 1.3333333333rem;
     line-height: 1.5rem;
     margin-bottom: 1rem;
@@ -57,7 +57,7 @@
 }
 
 @mixin titulo-4 {
-	font-family: ocre-sans;
+	font-family: ocre-sans, sans-serif;
     font-size: 1rem;
     line-height: 1rem;
     margin-bottom: 1rem;
@@ -74,7 +74,7 @@
 }
 
 @mixin titulo-5 {
-	font-family: ocre-sans;
+	font-family: ocre-sans, sans-serif;
     font-size: .91666666666666rem; // 22px
     line-height: 1.25rem;
     margin-bottom: .5rem;
@@ -87,7 +87,7 @@
 }
 
 @mixin texto-grande {
-	font-family: ocre-sans;
+	font-family: ocre-sans, sans-serif;
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 100;
@@ -111,7 +111,7 @@
     line-height: 1rem;
     font-weight: 100;
     margin-bottom: .5rem;
-    font-family: ocre-sans;
+    font-family: ocre-sans, sans-serif;
     @include media-breakpoint-up(lg) {
         font-size: .91666666666666rem; // 22px
         line-height: 1.5rem;
@@ -129,7 +129,7 @@
 	line-height: 1rem;
 	font-weight: 100;
 	margin-bottom: .5rem;
-	font-family: ocre-sans;
+	font-family: ocre-sans, sans-serif;
     &:last-child {
         margin-bottom: 0;
         @include media-breakpoint-up(lg) {
