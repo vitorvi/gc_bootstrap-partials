@@ -320,7 +320,10 @@
     }
     &.relacionado {
         a {
-            padding-bottom: 60%;
+            padding-bottom: 100%;
+            @include media-breakpoint-up(lg) {
+                padding-bottom: 60%;
+            }
         }
     }
 }
