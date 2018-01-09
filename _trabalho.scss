@@ -1,7 +1,7 @@
 @mixin componente {
-    margin-bottom: $component-mobile-margin-bottom;
+    padding-bottom: $component-mobile-margin-bottom;
     @include media-breakpoint-up(lg) {
-        margin-bottom: $component-desktop-margin-bottom;
+        padding-bottom: $component-desktop-margin-bottom;
     }
 }
 
@@ -26,6 +26,7 @@
         letter-spacing: 0;
         word-spacing: 0;
         font-variant: unset;
+        color: $preto;
     }
 
     box-shadow: 0 0 3rem 3rem rgba(0, 0, 0, 0.15);
@@ -37,11 +38,22 @@
     position: relative;
     
     // Primeiro registro de cada componente
-    > .titulo, > .subtitulo, > .paragrafo, 
+    .titulo, .subtitulo, .paragrafo, 
     .intro-projeto, .img-subtitulo-paragrafo, .comentario,
     .img-cheia, .img-grande, .img-media, .img-pequena, .estampa, 
     .mosaico-duplo, .mosaico-triplo, .carrossel, .fonte
-     { @include componente; }
+     { 
+        @include componente; 
+        .subtitulo, .paragrafo {
+            padding-bottom: 0;
+        }
+    }
+
+    .subtitulo, .paragrafo {
+        h2, p {
+            margin-bottom: 0;
+        }
+    }
     
     // Para quando um componente de parágrafo vier seguido a outro elemento de texto (título ou parágrafo)
     .titulo + .paragrafo, .subtitulo + .paragrafo, .paragrafo + .paragrafo {
@@ -68,7 +80,13 @@
 
     .img-cheia, .estampa {
         &.no-gutter.no-margin-bottom {
-            margin-bottom: 0;
+            padding-bottom: 0;
+            &:last-child {
+                padding-bottom: $component-mobile-margin-bottom;
+                @include media-breakpoint-up(lg) {
+                    padding-bottom: $component-desktop-margin-bottom;
+                }
+            }
         }
     }
 
@@ -102,7 +120,13 @@
                 margin-bottom: 0;
             }
             &.no-margin-bottom {
-                margin-bottom: 0;
+                padding-bottom: 0;
+                &:last-child {
+                    padding-bottom: $component-mobile-margin-bottom;
+                    @include media-breakpoint-up(lg) {
+                        padding-bottom: $component-desktop-margin-bottom;
+                    }
+                }
             }
         }
 
@@ -110,7 +134,7 @@
             height: 100%;
             margin-bottom: .5rem;
             @include media-breakpoint-up(lg) { margin-bottom: 0; }
-            &:last-child { margin-bottom: 0; }
+            &:last-of-type { margin-bottom: 0; }
         }
         //formato default:
         figure { 
@@ -165,16 +189,6 @@
         }
     }
 
-    .comentario {
-        padding-top: $component-mobile-margin-bottom;
-        padding-bottom: $component-mobile-margin-bottom;
-        @include media-breakpoint-up(lg) {
-            padding-top: $component-desktop-margin-bottom;
-            padding-bottom: $component-desktop-margin-bottom;
-        }
-        blockquote { color: $branco; }
-    }
-
     .img-subtitulo-paragrafo {
         img {
             margin-bottom: $component-mobile-margin-bottom;
@@ -184,6 +198,9 @@
     }
 
     .fonte {
+        .subtitulo {
+            text-align: center;
+        }
         p {
             font-size: 3rem;
             line-height: 4rem;
@@ -206,7 +223,35 @@
     }
 
     .no-margin-bottom {
-        margin-bottom: .5rem;
+        padding-bottom: .5rem;
+        &:last-child {
+            padding-bottom: $component-mobile-margin-bottom;
+            @include media-breakpoint-up(lg) {
+                padding-bottom: $component-desktop-margin-bottom;
+            }
+        }
+    }
+
+    .fundo-colorido, .comentario {
+        padding-top: $component-mobile-margin-bottom;
+        @include media-breakpoint-up(lg) {
+            padding-top: $component-desktop-margin-bottom;
+        }
+        & + :not(.fundo-colorido), & + :not(.comentario) {
+            padding-top: $component-mobile-margin-bottom;
+            @include media-breakpoint-up(lg) {
+                padding-top: $component-desktop-margin-bottom;
+            }
+        }
+        & + .fundo-colorido, & + .comentario {
+            padding-top: 0;
+            @include media-breakpoint-up(lg) {
+                padding-top: 0;
+            }
+        }
+        h1, h2, h3, h4, h5, h6, p, figcaption, blockquote {
+            color: $branco;
+        }
     }
 }
 

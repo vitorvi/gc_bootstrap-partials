@@ -23,15 +23,38 @@ header {
     #menu-button {
         padding: 0;
         border: 0;
+        width: 24px;
+        height: 24px;
+        position: relative;
         &.collapsed {
-            svg {
-                
-            }
+            #linha-1, #linha-3 { transform: rotate(0) translateY(0); }
+            #linha-2 { transform: scaleX(1); }
         }
         svg {
             height: 1rem;
             width: 1rem;
             display: block;
+        }
+        .linha {
+            background-color: $azul;
+            display: block;
+            position: absolute;
+            border-radius: 1px;
+            height: 2px;
+            transition: transform .15s ease-in-out;
+            width: 24px;
+        }
+        #linha-1 {
+            top: 3px;
+            transform: translateY(8px) rotate(45deg);
+        }
+        #linha-2 {
+            top: 11px;
+            transform: scaleX(0);
+        }
+        #linha-3 {
+            top: 19px;
+            transform: translateY(-8px) rotate(-45deg);
         }
     }
 
