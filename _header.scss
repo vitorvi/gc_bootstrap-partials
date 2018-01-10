@@ -60,7 +60,6 @@ header {
 
     #menu-mobile {
         width: 100%;
-        background-color: $branco;
         &.show {
             ul {
                 opacity: 1;
@@ -163,6 +162,9 @@ header {
         #menu-button {
             svg {
                 stroke: $branco;
+            }
+            .linha {
+                background-color: $branco;
             }
         }
         #menu-desktop {
