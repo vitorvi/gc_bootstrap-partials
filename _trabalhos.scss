@@ -29,7 +29,7 @@
         li {
             margin-left: 1rem;
         }
-        li, a {
+        li, a, span {
             text-decoration: none;
             display: inline-block;
             color: $cinza-escuro;
@@ -41,30 +41,41 @@
                 margin-left: 0;
             }
             &.is-checked {
-                font-weight: 400;
-                color: $rosa;
+                span {
+                    //font-weight: 400;
+                    color: $rosa;
+                }
             }
             @include media-breakpoint-up(lg) {
-                &::after {
+                color: $preto;
+            }
+        }
+        li, a {
+            @include media-breakpoint-up(lg) {
+                &::before {
                     content: '';
                     width: 0;
                     position: absolute;
-                    height: 1px;
+                    height: 1rem;
                     background-color: $rosa;
-                    bottom: -.125rem;
-                    left: 0;
-                    transition: width .1s ease;
+                    bottom: 0;
+                    left: -.25rem;
+                    transition: height .1s ease, width .1s ease;
+                    opacity: .25;
+                    border-radius: .125rem;
                 }
                 &:hover {
-                    &::after {
+                    &::before {
                         content: '';
-                        width: 100%;
+                        width: calc(100% + .5rem);
                         position: absolute;
-                        height: 1px;
+                        height: 1rem;
                         background-color: $rosa;
-                        bottom: -.125rem;
-                        left: 0;
-                        transition: width .1s ease;
+                        bottom: 0;
+                        left: -.25rem;
+                        transition: height .1s ease, width .1s ease;
+                        opacity: .25;
+                        border-radius: .125rem;
                     }
                 }
             }
@@ -210,6 +221,7 @@
         position: relative;
         @include media-breakpoint-up(lg) {
             margin-bottom: .5rem;
+            box-shadow: none;
         }
         .conteudo {
             pointer-events: none;
@@ -236,6 +248,7 @@
                 opacity: 0;
                 padding: 2 * $grid-gutter-width;
                 height: 100%;
+                border-radius: .125rem;
             }
             .titulo, p {
                 text-align: left;

@@ -77,12 +77,12 @@
                 }
             }
             .owl-item {
-                a, p {
+                .nome, a, p {
                     opacity: 1;
                     transition: opacity .3s linear;
                 }
                 &:not(.active) {
-                    a, p {
+                    .nome, a, p {
                         opacity: 0;
                     }
                 }
