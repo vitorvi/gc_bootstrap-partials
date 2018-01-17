@@ -46,7 +46,8 @@
     
     // Primeiro registro de cada componente
     .titulo, .subtitulo, .paragrafo, 
-    .intro-projeto, .img-subtitulo-paragrafo, .comentario, .video-cheio, 
+    .intro-projeto, .img-subtitulo-paragrafo, .comentario, 
+    .video-cheio, .video-grande, .video-medio, 
     .img-cheia, .img-grande, .img-media, .img-pequena, .estampa, 
     .mosaico-duplo, .mosaico-triplo, .carrossel, .fonte
      { 
@@ -77,14 +78,15 @@
         }
     }
     
-    // Componentes que tem a tag img
-    .img-cheia, .img-grande, .img-media, .img-pequena, .img-subtitulo-paragrafo, .video-cheio {
+    // Componentes que tem a tag img ou video
+    .img-cheia, .img-grande, .img-media, .img-pequena, .img-subtitulo-paragrafo, .video-cheio, .video-grande, .video-medio {
         img, video {
             width: 100%;
             height: 100%;
         }
     }
-
+    
+    // Componentes cheios
     .img-cheia, .estampa, .video-cheio {
         &.no-gutter.no-margin-bottom {
             padding-bottom: 0;
@@ -98,7 +100,8 @@
     }
 
     //Componentes que têm legenda
-    .img-cheia, .img-grande, .img-media, .video-cheio, .img-pequena, .img-subtitulo-paragrafo, 
+    .img-cheia, .img-grande, .img-media, .img-pequena,.img-subtitulo-paragrafo, 
+    .video-cheio, .video-grande, .video-grande, 
     .estampa, .mosaico-duplo, .mosaico-triplo {
         figcaption { margin-top: 1rem; }
     }
