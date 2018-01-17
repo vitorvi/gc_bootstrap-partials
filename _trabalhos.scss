@@ -23,6 +23,7 @@
     @include media-breakpoint-up(lg) {
         padding-top: 2rem;
         padding-bottom: 2rem;
+        margin-bottom: 0;
     }
     ul {
         margin-bottom: 0;
@@ -84,9 +85,9 @@
     .dropdown {
         width: 100%;
         height: 2rem;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 4px 0 rgba($azul, 0.1);
         .dropdown-toggle {
-            width: 100%;
+            width: #{map-get($container-fluid-widths, md)};
             height: 2rem;
             text-align: left;
             border: none;
@@ -94,11 +95,18 @@
             padding-right: 1rem;
             color: $azul;
             background-color: $branco;
+            @include media-breakpoint-up(md) {
+                display: block;
+                padding-left: .25rem;
+                padding-right: .25rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
             .filtro-aplicado, .chamada-filtro {
                 opacity: 0;
                 position: absolute;
                 top: 0;
-                left: 2*$grid-gutter-width;
+                left: calc(#{(100% - map-get($container-fluid-widths, md))/2} + #{$grid-gutter-width/2});
                 line-height: 2rem;
                 transition: opacity .25s linear;
                 &.show {
@@ -110,7 +118,7 @@
                 display: inline-block;
                 position: absolute;
                 width: 0;
-                right: 1rem;
+                right: calc(#{(100% - map-get($container-fluid-widths, md))/2} + #{$grid-gutter-width/2});
                 top: 0.875rem;
                 line-height: 2rem;
                 margin-left: 0.255em;
@@ -121,6 +129,9 @@
                 border-right: 0.25rem solid transparent;
                 border-bottom: 0;
                 border-left: 0.25rem solid transparent;
+                @include media-breakpoint-up(lg) {
+                    right: 1rem;
+                }
             }
         }
         .dropdown-menu {
@@ -140,7 +151,7 @@
             pointer-events: none;
             @include border-radius(0 0 $border-radius $border-radius);
             &.show {
-                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+                box-shadow: 0 2px 4px 0 rgba($azul, 0.1);
                 border-top: 1px solid $cinza;
                 pointer-events: all;
                 transition: height .5s ease-in-out .25s, border-top .15s linear .75s, box-shadow .25s linear, opacity 0s linear;
@@ -209,12 +220,19 @@
 
 .thumb-projeto {
     position: relative;
-    a {
+    margin-bottom: 1rem;
+    @include media-breakpoint-up(md) {
+        margin-bottom: .5rem;
+    }
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 0;
+    }
+    .thumb {
         display: block;
-        padding-bottom: calc(100% - 3rem);
+        padding-bottom: calc(100% - 4rem);
         background-color: $azul;
         border-radius: .125rem .125rem 0 0;
-        box-shadow: 0 2px 0.5rem 0 rgba($azul, 0.2);
+        box-shadow: 1px 0 8px 0 rgba($azul, 0.1);
         background-position: center;
         background-size: cover;
         margin-bottom: 4rem;
@@ -240,8 +258,8 @@
             justify-content: space-between;
             align-items: flex-start;
             transition: opacity .1s linear;
-            transform: translateY(3rem);
-            box-shadow: 0 2px 0.5rem 0 rgba($azul, 0.2);
+            transform: translateY(4rem);
+            box-shadow: 1px 3px 8px 0 rgba($azul, 0.1);
             @include media-breakpoint-down(md) {
                 background-image: linear-gradient(to bottom, rgba($branco, 1), rgba($branco, 1)) !important;
             }
@@ -265,6 +283,9 @@
             .titulo {
                 margin-bottom: 0;
                 margin-top: 0;
+                @include media-breakpoint-down(md) {
+                    line-height: 1.5rem;
+                }
                 @include media-breakpoint-up(lg) {
                      text-align: center;
                      color: $branco;
@@ -293,6 +314,9 @@
                     word-spacing: .125rem;
                     font-weight: 100;
                     color: $azul;
+                    @include media-breakpoint-down(md) {
+                        line-height: 1.5rem;
+                    }
                     @include media-breakpoint-up(lg) {
                         padding-left: .5rem;
                         padding-right: .5rem;
@@ -304,7 +328,7 @@
         }
     }
     &:hover {
-        a {
+        .thumb {
             cursor: pointer;
             //background-color: $rosa;
             //background-image: none !important;
@@ -314,7 +338,7 @@
         }
     }
     &.destaque {
-        a {
+        .thumb {
             @include media-breakpoint-up(sm) {
               padding-bottom: 100%;
             }
@@ -338,8 +362,8 @@
         }
     }
     &.relacionado {
-        a {
-            padding-bottom: 100%;
+        .thumb {
+            padding-bottom: calc(100% - 4rem);
             @include media-breakpoint-up(lg) {
                 padding-bottom: 60%;
             }
@@ -350,13 +374,27 @@
 #clientes {
     h1 {
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: $component-mobile-margin-bottom;
+        @include media-breakpoint-up(lg) {
+            margin-bottom: $component-desktop-margin-bottom;
+        }
     }
     background-color: $cinza-claro;
-    padding-top: 3rem;
-    padding-bottom: 2rem;
+    padding-top: $component-mobile-margin-bottom;
+    @include media-breakpoint-up(lg) {
+        padding-top: $component-desktop-margin-bottom;
+    }
     .cliente {
-        margin-bottom: 3rem;
+        margin-bottom: $component-mobile-margin-bottom;
+        margin-left: .5rem;
+        margin-right: .5rem;
+        @include media-breakpoint-up(md) {
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+        }
+        @include media-breakpoint-up(lg) {
+            margin-bottom: $component-desktop-margin-bottom;
+        }
         img {
             width: 100%;
         }

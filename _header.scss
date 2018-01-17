@@ -1,13 +1,13 @@
 header {
 
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+    box-shadow: 0 2px 4px 0 rgba($azul, 0.1);
     background-color: $branco;
     width: 100%;
     top: 0;
     padding-top: .5rem;
     padding-bottom: .5rem;
     z-index: 10;
-    transition: background-color .1s linear, transform .15s ease-in-out;
+    transition: background-color .1s linear, transform .25s ease-in-out;
 
     .logo {
         svg {

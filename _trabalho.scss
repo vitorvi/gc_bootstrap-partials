@@ -36,7 +36,7 @@
         color: $preto;
     }
 
-    box-shadow: 0 0 3rem 3rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 3rem 3rem rgba($azul, 0.15);
     margin-top: 0;
     padding-top: $component-mobile-margin-bottom;
     @include media-breakpoint-up(lg) {
@@ -266,14 +266,14 @@
     position: relative;
     padding-top: 2.5rem;
     padding-bottom: 3.5rem;
-    background-color: #fafafa;
+    background-color: $cinza-claro;
     .titulo {
         text-align: center;
         margin-bottom: 1.5rem;
     }
     .conteudo {
         .titulo {
-            margin-bottom: .5rem;
+            margin-bottom: 0;
         }
     }
 }

@@ -1,18 +1,21 @@
 footer {
     #formulario-contato {
-        padding-top: 3rem;
+        padding-top: $component-mobile-margin-bottom;
         border-bottom: 1px solid $cinza;
         background-color: $azul;
+        @include media-breakpoint-up(lg) {
+            padding-top: $component-desktop-margin-bottom;
+        }
         h1 {
             color: $branco;
             margin-bottom: 2rem;
             text-align: center;
         }
-        button {
-            margin-top: 2rem;
-        }
         form {
-            margin-bottom: 3rem;
+            margin-bottom: $component-mobile-margin-bottom;
+           @include media-breakpoint-up(lg) {
+                margin-bottom: $component-desktop-margin-bottom;
+            }
         }
     }
     #contatos {
@@ -35,11 +38,10 @@ footer {
         }
         address {
             ul {
-                margin-bottom: 1rem;
+                margin-bottom: 0;
                 text-align: center;
-                border-bottom: 1px solid $cinza;
                 padding-bottom: 1rem;
-                @include media-breakpoint-up(lg) {
+                @include media-breakpoint-up(md) {
                     margin-bottom: 0;
                     border-left: 1px solid $cinza;
                     border-bottom: 0;
@@ -48,11 +50,22 @@ footer {
                     padding-bottom: 0;
                 }
             }
+            hr {
+                width: calc(#{100% / 3} + #{2*$grid-gutter-width/3});
+                margin-top: 0;
+                margin-bottom: 1rem;
+                margin-left: auto;
+                margin-right: auto;
+                border-top: 1px solid $cinza;
+                @include media-breakpoint-up(md) {
+                    margin-bottom: 0;
+                }
+            }
         }
         .midias {
             ul {
                 text-align: center;
-                @include media-breakpoint-up(lg) {
+                @include media-breakpoint-up(md) {
                     text-align: right;
                 }
                 li {
@@ -63,7 +76,7 @@ footer {
                     }
                     svg, img {
                         fill: $branco;
-                        height: 1rem;
+                        width: 100%;
                         transform: translateY(0);
                         transition: fill .1s linear, transform .1s ease-in-out;
                         &:hover {
