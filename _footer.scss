@@ -1,4 +1,13 @@
 footer {
+    a {
+        font-style: italic;
+        color: $branco;
+        font-weight: 400;
+        transition: color .1s linear, transform .1s ease-in-out;
+        &:hover {
+            color: $rosa;
+        }
+    }
     #formulario-contato {
         padding-top: $component-mobile-margin-bottom;
         border-bottom: 1px solid $cinza;
@@ -30,11 +39,6 @@ footer {
                 &:first-child {
                     margin-top: 0;
                 }
-                a {
-                    font-style: italic;
-                    color: $branco;
-                    font-weight: 400;
-                }
             }
         }
         address {
@@ -48,6 +52,19 @@ footer {
                     padding-left: 1rem;
                     text-align: left;
                     padding-bottom: 0;
+                }
+            }
+            a {
+                svg {
+                    fill: $branco;
+                    transform: translateY(0);
+                    transition: fill .1s linear, transform .1s ease-in-out;
+                    margin-right: .5rem;
+                }
+                &:hover {
+                    svg {
+                        fill: $rosa;
+                    }
                 }
             }
             hr {
@@ -97,15 +114,15 @@ footer {
                 &:first-child {
                     margin-left: 0;
                 }
-                svg, img {
-                    fill: $branco;
-                    width: 100%;
-                    transform: translateY(0);
-                    transition: fill .1s linear, transform .1s ease-in-out;
-                    &:hover {
-                        fill: $rosa;
-                        //transform: translateY(-.125rem);
-                    }
+            }
+            svg, img {
+                fill: $branco;
+                width: 100%;
+                transform: translateY(0);
+                transition: fill .1s linear, transform .1s ease-in-out;
+                &:hover {
+                    fill: $rosa;
+                    //transform: translateY(-.125rem);
                 }
             }
         }
