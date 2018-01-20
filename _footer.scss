@@ -20,7 +20,7 @@ footer {
             margin-bottom: 2rem;
             text-align: center;
         }
-        form {
+        .form {
             margin-bottom: $component-mobile-margin-bottom;
            @include media-breakpoint-up(lg) {
                 margin-bottom: $component-desktop-margin-bottom;
