@@ -49,7 +49,7 @@
     .intro-projeto, .img-subtitulo-paragrafo, .comentario, 
     .video-cheio, .video-grande, .video-medio, 
     .img-cheia, .img-grande, .img-media, .img-pequena, .estampa, 
-    .mosaico-duplo, .mosaico-triplo, .carrossel, .fonte
+    .mosaico-duplo, .mosaico-triplo, .mosaico-composto, .carrossel, .fonte
      { 
         @include componente; 
         .subtitulo, .paragrafo {
@@ -60,6 +60,18 @@
     .subtitulo, .paragrafo {
         h2, p {
             margin-bottom: 0;
+        }
+    }
+
+    .subtitulo {
+        &.fio {
+            h2 {
+                border-top: 1px solid $cinza;
+                padding-top: $component-mobile-margin-bottom/2;
+                @include media-breakpoint-up(lg) {
+                    padding-top: $component-desktop-margin-bottom/2;
+                }
+            }
         }
     }
     
@@ -102,11 +114,12 @@
     //Componentes que têm legenda
     .img-cheia, .img-grande, .img-media, .img-pequena,.img-subtitulo-paragrafo, 
     .video-cheio, .video-grande, .video-grande, 
-    .estampa, .mosaico-duplo, .mosaico-triplo {
+    .estampa, .mosaico-duplo, .mosaico-triplo, .mosaico-composto {
         figcaption { margin-top: 1rem; }
     }
     
     //Mosaicos
+
     .mosaico-duplo, .mosaico-triplo {
         &.quadrado { 
             figure { 
@@ -123,6 +136,53 @@
                 padding-bottom: 166.6666%; 
             } 
         }
+    }
+
+    .mosaico-composto {
+        .img {
+            &:nth-child(1) {
+                figure {
+                    padding-bottom: 60%;
+                    &:first-child {
+                        margin-bottom: $custom_grid-gutter-width;
+                    }
+                }
+            }
+            &:nth-child(2) {
+                figure {
+                    padding-bottom: calc(120% + #{$custom_grid-gutter-width});
+                }
+            }
+        }
+        &.no-gutter {
+            .img {
+                &:nth-child(1) {
+                    figure {
+                        margin-bottom: 0;
+                    }
+                }
+                &:nth-child(2) {
+                    figure {
+                        padding-bottom: 120%;
+                    }
+                }
+            }
+            &.no-margin-bottom {
+                &:nth-child(1) {
+                    figure {
+                        margin-bottom: 0;
+                    }
+                }
+                &:nth-child(2) {
+                    figure {
+                        padding-bottom: 120%;
+                    }
+                }
+            }
+        }
+    }
+
+    .mosaico-duplo, .mosaico-triplo, .mosaico-composto {
         &.no-gutter {
             .img {
                 padding-left: 0;
