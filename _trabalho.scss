@@ -283,12 +283,17 @@
             padding-left: 1rem;
             padding-right: 1rem;
             transition: border .1s linear;
+            background-color: $cinza-claro;
+            overflow: hidden;
             &:focus {
-                border: 1px solid $azul;
+                overflow: scroll;
             }
             &::-webkit-scrollbar-thumb {
                 background-color: $azul;
             }
+        }
+        .btn {
+            margin-top: .5rem;
         }
     }
 
