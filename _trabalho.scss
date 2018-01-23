@@ -61,6 +61,22 @@
         h2, p {
             margin-bottom: 0;
         }
+        &.centralizado {
+            text-align: center;
+        }
+    }
+
+    .img-subtitulo-paragrafo {
+        &.centralizado {
+            h2, p {
+                text-align: center;
+            }
+            @include media-breakpoint-up(lg) {
+                h2, p {
+                    text-align: left;
+                }
+            }
+        }
     }
 
     .subtitulo {
