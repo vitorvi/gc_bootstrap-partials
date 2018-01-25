@@ -1,0 +1,59 @@
+#curso-destaque {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    background-color: $azul;
+    p, h1, p, a {
+        color: $branco;
+        border-color: $branco;
+    }
+    .destaque {
+        font-style: italic;
+        font-weight: 100;
+    }
+}
+
+#intro-cursos {
+    background-color: $cinza-claro;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    blockquote {
+        font-style: normal;
+        color: $azul;
+    }
+}
+
+#cursos {
+    padding-top: $component-mobile-margin-bottom;
+    padding-bottom: $component-mobile-margin-bottom;
+    @include media-breakpoint-up(lg) {
+        padding-top: $component-desktop-margin-bottom;
+        padding-bottom: $component-desktop-margin-bottom;
+    }
+}
+
+#curso {
+    background-color: $cinza-claro;
+    text-align: center;
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+        letter-spacing: 0;
+        word-spacing: 0;
+        font-variant: unset;
+        color: $preto;
+    }
+    padding-top: $component-mobile-margin-bottom;
+    padding-bottom: $component-mobile-margin-bottom;
+    @include media-breakpoint-up(lg) {
+        padding-top: $component-desktop-margin-bottom;
+        padding-bottom: $component-desktop-margin-bottom;
+    }
+    .intro {
+        margin-bottom: 2rem;
+    }
+    .texto-grande {
+        text-align: center;
+    }
+    .btn {
+        margin-bottom: 4rem;
+    }
+}
